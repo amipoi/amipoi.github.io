@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#e6eae2" />
 <title>Alexander Poirier | Data Scientist</title>
 <meta name="description" content="Alexander Poirier is a data scientist at Lattice Semiconductor who builds demand forecasting models, data pipelines, and AI training. MCS-DS, University of Illinois Urbana-Champaign." />
 <meta property="og:title" content="Alexander Poirier | Data Scientist" />
@@ -12,28 +13,34 @@
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
 <style>
   :root {
-    --paper: #f5f7fa;
-    --surface: #ffffff;
-    --ink: #172033;
-    --muted: #5b6577;
-    --rule: #dce1e8;
-    --cobalt: #2b59e0;
-    --band: rgba(43, 89, 224, 0.14);
-    --amber: #c97f0c;
+    --paper: #e6eae2;
+    --surface: #f2f4ef;
+    --ink: #1d2a21;
+    --muted: #586a5d;
+    --rule: #c9d2c4;
+    --cobalt: #3d6a47;
+    --band: rgba(61, 106, 71, 0.17);
+    --amber: #96682a;
+    --forest: #1f3527;
+    --topo: rgba(61, 106, 71, 0.16);
+    --grain-opacity: 0.35;
     --display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
     --body: "Public Sans", "Segoe UI", system-ui, sans-serif;
     --max: 1100px;
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --paper: #121826;
-      --surface: #182033;
-      --ink: #e6eaf2;
-      --muted: #9aa5b8;
-      --rule: #2a3550;
-      --cobalt: #7fa0ff;
-      --band: rgba(127, 160, 255, 0.18);
-      --amber: #f0b44c;
+      --paper: #111813;
+      --surface: #17211a;
+      --ink: #e2e9e0;
+      --muted: #9db0a2;
+      --rule: #2a3a2f;
+      --cobalt: #8fc29a;
+      --band: rgba(143, 194, 154, 0.17);
+      --amber: #d9a85c;
+      --forest: #0c120e;
+      --topo: rgba(143, 194, 154, 0.10);
+      --grain-opacity: 0.18;
     }
   }
 
@@ -45,6 +52,11 @@
     color: var(--ink);
     font: 400 1.0625rem/1.65 var(--body);
     -webkit-font-smoothing: antialiased;
+    position: relative;
+  }
+  body::before {
+    content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: var(--grain-opacity);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.24  0 0 0 0 0.3  0 0 0 0 0.25  0 0 0 0.55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
   a { color: inherit; text-decoration-color: var(--cobalt); text-underline-offset: 0.2em; text-decoration-thickness: 2px; }
   a:hover { color: var(--cobalt); }
@@ -70,7 +82,10 @@
   .top nav a:hover { color: var(--ink); }
 
   /* Hero */
-  .hero { padding: 4.5rem 0 3.5rem; }
+  .hero { padding: 4.5rem 0 3.5rem; position: relative; overflow: hidden; }
+  .topo { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+  .topo path { fill: none; stroke: var(--topo); stroke-width: 1.4; }
+  .hero .wrap { position: relative; z-index: 1; }
   .hero .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 3.5rem; align-items: center; }
   .who { display: flex; align-items: center; gap: 0.9rem; margin-bottom: 1.75rem; color: var(--muted); font-size: 0.98rem; line-height: 1.4; }
   .who img { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; }
@@ -83,10 +98,10 @@
     font-weight: 600; font-size: 0.98rem; text-decoration: none; border: 2px solid var(--ink);
   }
   .btn.solid { background: var(--ink); color: var(--paper); }
-  .btn.solid:hover { background: var(--cobalt); border-color: var(--cobalt); color: #fff; }
+  .btn.solid:hover { background: var(--cobalt); border-color: var(--cobalt); color: var(--paper); }
   .btn:not(.solid):hover { border-color: var(--cobalt); color: var(--cobalt); }
 
-  .chart { background: var(--surface); border: 1px solid var(--rule); border-radius: 18px; padding: 1.25rem 1.25rem 1rem; }
+  .chart { margin: 0; background: var(--surface); border: 1px solid var(--rule); border-radius: 22px; box-shadow: 0 1px 0 rgba(255,255,255,0.5) inset; padding: 1.25rem 1.25rem 1rem; }
   .chart svg { width: 100%; height: auto; overflow: visible; }
   .grid line { stroke: var(--rule); stroke-width: 1; }
   .actual { fill: none; stroke: var(--ink); stroke-width: 2.5; stroke-linejoin: round; stroke-linecap: round; }
@@ -110,7 +125,7 @@
   @keyframes fade { to { opacity: 1; } }
 
   /* Facts strip */
-  .facts { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); background: var(--surface); }
+  .facts { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); background: var(--surface); position: relative; }
   .facts ul { display: grid; grid-template-columns: repeat(4, 1fr); list-style: none; margin: 0; padding: 0; }
   .facts li { padding: 1.5rem 1.5rem 1.5rem 0; font-size: 0.95rem; color: var(--muted); line-height: 1.45; }
   .facts li + li { padding-left: 1.5rem; border-left: 1px solid var(--rule); }
@@ -135,18 +150,36 @@
 
   /* Projects */
   .projects { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
-  .project { background: var(--surface); border: 1px solid var(--rule); border-radius: 18px; padding: 1.75rem; display: flex; flex-direction: column; }
+  .project { background: var(--surface); border: 1px solid var(--rule); border-radius: 22px; padding: 1.75rem; display: flex; flex-direction: column; }
   .project.feature { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; border-color: var(--cobalt); }
   .project h3 { font-size: 1.35rem; font-weight: 700; margin-bottom: 0.25rem; }
   .context { color: var(--muted); font-size: 0.92rem; margin-bottom: 1rem; }
   .finding { border-left: 3px solid var(--amber); padding-left: 1rem; color: var(--ink); }
   .finding strong { display: block; font-size: 0.9rem; color: var(--amber); margin-bottom: 0.15rem; }
   .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; list-style: none; margin: auto 0 0; padding: 1rem 0 0; }
-  .tags li { font-size: 0.8rem; padding: 0.2rem 0.65rem; border-radius: 999px; background: var(--paper); border: 1px solid var(--rule); color: var(--muted); }
+  .tags li { font-size: 0.8rem; padding: 0.2rem 0.65rem; border-radius: 999px; background: color-mix(in srgb, var(--cobalt) 9%, var(--surface)); border: 1px solid var(--rule); color: var(--muted); }
   .project .link { margin-top: 1rem; font-weight: 600; }
 
   .also { margin-top: 1.75rem; color: var(--muted); max-width: 52em; }
   .also b { color: var(--ink); }
+
+  /* Project visuals */
+  .shot { display: block; width: 100%; padding: 0; margin: 0 0 1.25rem; border: 1px solid var(--rule); border-radius: 14px; overflow: hidden; background: #fff; cursor: zoom-in; position: relative; }
+  .shot img { width: 100%; height: 230px; object-fit: contain; background: #fff; padding: 0.5rem; }
+  .project.feature .shot { margin: 0; align-self: center; }
+  .project.feature .shot img { height: auto; padding: 0; }
+  .shot .zoom { position: absolute; right: 0.6rem; bottom: 0.6rem; background: color-mix(in srgb, var(--forest) 85%, transparent); color: #e6eae2; font-size: 0.78rem; padding: 0.2rem 0.6rem; border-radius: 999px; opacity: 0; transition: opacity 0.15s; }
+  .shot:hover .zoom, .shot:focus-visible .zoom { opacity: 1; }
+  .shot:hover img { filter: saturate(1.05) contrast(1.02); }
+  .project.wide { grid-column: 1 / -1; }
+  .project.wide .shot img { height: auto; padding: 0; }
+  .wide-text { display: grid; grid-template-columns: 1.6fr 1fr; gap: 2.5rem; align-items: end; }
+  .wide-text p:last-child { margin-bottom: 0; }
+  dialog.viewer { border: 0; padding: 0; background: transparent; max-width: min(1400px, 94vw); max-height: 92vh; }
+  dialog.viewer::backdrop { background: rgba(12, 18, 14, 0.82); }
+  dialog.viewer img { max-width: 100%; max-height: 82vh; border-radius: 12px; background: #fff; }
+  dialog.viewer p { color: #e6eae2; margin: 0.6rem 0 0; font-size: 0.95rem; }
+  dialog.viewer button { position: fixed; top: 1rem; right: 1rem; background: #e6eae2; color: #1f3527; border: 0; border-radius: 999px; padding: 0.5rem 1rem; font: 600 0.95rem var(--body); cursor: pointer; }
 
   /* Education + skills */
   .two { display: grid; grid-template-columns: 15rem 1fr; gap: 2.5rem; }
@@ -160,22 +193,22 @@
   .skills p { color: var(--muted); margin: 0; }
 
   /* Contact */
-  .contact { margin-top: 5rem; background: var(--ink); color: var(--paper); }
+  .contact { margin-top: 5rem; background: var(--forest); color: #e6eae2; }
   .contact .wrap { padding-top: 4rem; padding-bottom: 4rem; display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem; align-items: end; }
   .contact h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; margin-bottom: 1rem; }
   .contact p { opacity: 0.8; max-width: 30em; }
   .contact ul { list-style: none; margin: 0; padding: 0; }
-  .contact li { border-top: 1px solid color-mix(in srgb, var(--paper) 22%, transparent); }
+  .contact li { border-top: 1px solid rgba(230, 234, 226, 0.2); }
   .contact li a { display: flex; justify-content: space-between; padding: 0.9rem 0; text-decoration: none; font-weight: 600; }
   .contact li a span { opacity: 0.65; font-weight: 400; }
-  .contact li a:hover { color: var(--amber); }
-  .contact .btn.solid { background: var(--paper); color: var(--ink); border-color: var(--paper); }
-  .contact .btn.solid:hover { background: var(--amber); border-color: var(--amber); color: #172033; }
+  .contact li a:hover { color: #d9a85c; }
+  .contact .btn.solid { background: #e6eae2; color: #1f3527; border-color: #e6eae2; }
+  .contact .btn.solid:hover { background: #d9a85c; border-color: #d9a85c; color: #1f3527; }
   footer { padding: 1.5rem 0; font-size: 0.85rem; color: var(--muted); }
 
   @media (max-width: 900px) {
     .hero { padding-top: 2.5rem; }
-    .hero .wrap, .block-head, .role, .two, .contact .wrap, .project.feature { grid-template-columns: 1fr; gap: 1.25rem; }
+    .hero .wrap, .block-head, .role, .two, .contact .wrap, .project.feature, .wide-text { grid-template-columns: 1fr; gap: 1.25rem; }
     .facts ul { grid-template-columns: repeat(2, 1fr); }
     .facts li, .facts li + li { padding: 1.25rem 1rem; border-left: 0; }
     .facts li:nth-child(even) { border-left: 1px solid var(--rule); }
@@ -205,6 +238,22 @@
 
 <main id="main">
   <section class="hero">
+    <svg class="topo" viewBox="0 0 1440 760" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path d="M1234,140 L1231,143 L1228,146 L1225,149 L1224,152 L1222,155 L1221,158 L1221,161 L1219,164 L1218,168 L1215,171 L1212,174 L1208,176 L1204,178 L1199,180 L1195,181 L1190,182 L1185,182 L1180,183 L1175,184 L1170,184 L1164,183 L1159,182 L1155,180 L1151,178 L1148,174 L1146,170 L1144,166 L1144,162 L1144,159 L1143,156 L1143,153 L1141,151 L1139,148 L1135,146 L1131,143 L1128,140 L1124,136 L1122,132 L1121,128 L1121,124 L1123,120 L1126,117 L1130,114 L1134,111 L1139,109 L1143,107 L1148,106 L1152,104 L1157,103 L1161,102 L1166,101 L1171,101 L1175,101 L1180,102 L1184,103 L1188,105 L1192,106 L1196,108 L1200,109 L1204,110 L1208,110 L1213,111 L1218,112 L1224,113 L1229,115 L1233,117 L1237,120 L1239,124 L1239,128 L1238,132 L1236,136 L1234,140Z"/>
+<path d="M1278,140 L1273,146 L1268,152 L1264,157 L1261,162 L1259,167 L1258,173 L1256,179 L1253,186 L1250,192 L1245,197 L1239,202 L1232,206 L1224,210 L1216,212 L1207,215 L1198,217 L1189,218 L1180,220 L1170,221 L1161,222 L1151,221 L1141,219 L1133,215 L1126,210 L1120,203 L1117,196 L1115,188 L1114,181 L1114,174 L1113,169 L1111,164 L1108,160 L1103,155 L1096,151 L1089,146 L1082,140 L1076,133 L1073,126 L1071,118 L1072,111 L1075,104 L1081,98 L1088,92 L1095,87 L1104,83 L1112,80 L1120,76 L1128,73 L1136,70 L1145,68 L1154,67 L1163,67 L1171,67 L1180,69 L1188,72 L1195,75 L1202,78 L1209,81 L1216,83 L1223,84 L1232,85 L1241,86 L1251,87 L1261,89 L1271,93 L1279,98 L1285,104 L1288,111 L1289,118 L1287,126 L1283,133 L1278,140Z"/>
+<path d="M1322,140 L1315,149 L1309,157 L1304,165 L1300,172 L1297,180 L1295,189 L1292,198 L1288,207 L1282,216 L1275,223 L1265,230 L1255,236 L1243,241 L1231,245 L1219,248 L1207,252 L1194,255 L1180,257 L1166,260 L1151,260 L1137,259 L1123,256 L1111,250 L1101,242 L1093,232 L1089,221 L1086,210 L1085,199 L1084,190 L1083,182 L1079,175 L1074,169 L1066,163 L1056,156 L1046,149 L1036,140 L1028,130 L1023,119 L1021,109 L1023,98 L1029,88 L1037,79 L1046,71 L1057,64 L1069,57 L1080,52 L1091,46 L1103,42 L1115,37 L1128,34 L1141,33 L1154,33 L1168,34 L1180,38 L1192,42 L1202,46 L1212,51 L1222,54 L1232,57 L1243,59 L1256,60 L1270,61 L1285,62 L1300,66 L1314,71 L1325,78 L1333,87 L1338,97 L1338,109 L1335,120 L1329,130 L1322,140Z"/>
+<path d="M1366,140 L1357,151 L1349,162 L1343,172 L1339,183 L1336,194 L1332,205 L1328,217 L1322,228 L1314,239 L1304,249 L1291,258 L1277,265 L1263,271 L1247,277 L1231,282 L1215,287 L1198,291 L1180,295 L1161,299 L1142,300 L1123,298 L1105,293 L1089,285 L1076,273 L1067,260 L1061,245 L1058,230 L1056,217 L1055,205 L1053,195 L1048,186 L1039,178 L1028,170 L1015,161 L1002,152 L989,140 L980,127 L974,113 L972,99 L976,85 L983,72 L993,60 L1006,50 L1019,40 L1034,32 L1048,23 L1063,16 L1078,9 L1094,4 L1111,-0 L1129,-2 L1146,-1 L1164,1 L1180,6 L1195,12 L1209,18 L1222,24 L1235,28 L1249,31 L1264,33 L1281,33 L1300,34 L1319,37 L1339,41 L1357,48 L1371,58 L1381,70 L1386,84 L1386,99 L1382,114 L1375,127 L1366,140Z"/>
+<path d="M1409,140 L1399,154 L1390,167 L1384,180 L1379,194 L1375,207 L1371,222 L1365,236 L1357,250 L1346,263 L1333,275 L1317,285 L1300,293 L1281,301 L1263,308 L1243,315 L1223,322 L1202,328 L1180,334 L1157,338 L1133,340 L1109,337 L1086,330 L1067,319 L1052,305 L1041,287 L1034,269 L1030,251 L1028,234 L1026,220 L1022,207 L1015,197 L1004,187 L990,178 L974,167 L957,154 L942,140 L931,124 L925,107 L924,89 L929,72 L938,56 L951,42 L965,29 L981,17 L998,5 L1016,-5 L1034,-15 L1052,-24 L1073,-31 L1094,-35 L1116,-37 L1138,-35 L1160,-31 L1180,-24 L1198,-17 L1215,-9 L1232,-2 L1248,2 L1265,5 L1284,6 L1306,7 L1330,8 L1354,11 L1379,17 L1400,26 L1417,38 L1429,54 L1434,71 L1433,90 L1428,108 L1419,125 L1409,140Z"/>
+<path d="M1451,140 L1441,157 L1432,173 L1425,189 L1420,205 L1416,221 L1410,238 L1402,255 L1392,272 L1378,286 L1361,300 L1342,311 L1321,321 L1300,330 L1278,339 L1255,348 L1232,357 L1207,366 L1180,374 L1152,379 L1123,380 L1094,377 L1068,368 L1045,354 L1028,335 L1015,314 L1008,292 L1003,271 L1001,251 L998,235 L992,220 L982,208 L968,197 L950,186 L931,173 L911,157 L895,140 L883,121 L876,100 L877,80 L883,60 L894,41 L908,24 L925,8 L944,-7 L963,-21 L983,-34 L1004,-47 L1026,-57 L1051,-65 L1077,-70 L1104,-71 L1130,-69 L1156,-63 L1180,-54 L1202,-45 L1222,-36 L1241,-28 L1260,-23 L1281,-21 L1305,-20 L1332,-20 L1360,-19 L1390,-16 L1419,-8 L1444,3 L1463,19 L1476,38 L1481,59 L1480,81 L1473,102 L1463,122 L1451,140Z"/>
+<path d="M1494,140 L1483,160 L1474,178 L1468,197 L1462,216 L1457,236 L1450,255 L1440,275 L1426,293 L1409,309 L1389,324 L1366,337 L1342,348 L1318,359 L1293,370 L1267,381 L1240,393 L1211,404 L1180,414 L1147,420 L1113,421 L1080,416 L1050,405 L1024,388 L1004,366 L990,341 L982,315 L977,290 L974,268 L969,249 L961,234 L948,220 L931,207 L910,194 L887,178 L866,160 L847,140 L835,118 L829,94 L830,71 L838,48 L851,26 L867,6 L885,-13 L905,-31 L926,-48 L949,-64 L973,-79 L1000,-91 L1029,-100 L1059,-105 L1091,-106 L1122,-102 L1152,-94 L1180,-83 L1205,-72 L1228,-62 L1250,-54 L1273,-49 L1298,-48 L1326,-48 L1358,-48 L1392,-47 L1426,-43 L1459,-33 L1487,-19 L1509,-1 L1522,22 L1527,46 L1525,72 L1517,96 L1506,119 L1494,140Z"/>
+<path d="M1537,140 L1526,162 L1518,184 L1511,206 L1505,228 L1499,250 L1489,272 L1477,294 L1460,314 L1439,332 L1415,348 L1390,362 L1363,375 L1336,388 L1308,401 L1280,415 L1249,430 L1216,443 L1180,455 L1142,462 L1103,463 L1066,456 L1032,442 L1003,421 L981,395 L966,366 L957,337 L951,309 L947,285 L940,264 L929,247 L914,232 L893,217 L869,202 L843,184 L819,163 L800,140 L787,115 L782,88 L785,62 L794,36 L808,11 L825,-12 L845,-34 L867,-55 L890,-75 L915,-94 L942,-112 L973,-126 L1006,-136 L1042,-141 L1079,-140 L1115,-134 L1149,-124 L1180,-111 L1208,-99 L1234,-88 L1260,-80 L1286,-76 L1315,-75 L1348,-76 L1385,-77 L1424,-75 L1463,-70 L1500,-59 L1531,-42 L1554,-20 L1567,6 L1572,34 L1569,63 L1560,90 L1549,116 L1537,140Z"/>
+<path d="M1580,140 L1570,165 L1562,190 L1556,215 L1549,240 L1541,265 L1529,289 L1514,313 L1493,335 L1469,354 L1442,371 L1413,386 L1383,401 L1354,416 L1324,432 L1292,449 L1258,467 L1221,483 L1180,497 L1137,504 L1093,504 L1051,496 L1014,479 L982,454 L958,424 L942,391 L932,359 L926,328 L919,302 L911,280 L897,261 L878,244 L854,228 L826,210 L798,190 L773,166 L753,140 L741,112 L737,82 L740,53 L751,24 L766,-3 L784,-29 L805,-55 L827,-79 L852,-103 L880,-125 L911,-145 L945,-161 L984,-171 L1025,-176 L1067,-174 L1107,-166 L1145,-153 L1180,-139 L1211,-125 L1240,-113 L1269,-106 L1299,-102 L1333,-103 L1371,-105 L1412,-106 L1456,-104 L1500,-97 L1540,-84 L1573,-64 L1598,-39 L1612,-9 L1616,22 L1612,54 L1603,85 L1592,113 L1580,140Z"/>
+<path d="M327,520 L323,524 L320,528 L317,531 L315,535 L314,539 L313,543 L312,547 L310,551 L308,555 L304,559 L300,562 L295,565 L289,567 L284,568 L278,569 L272,570 L266,571 L260,572 L254,572 L248,572 L241,572 L235,570 L230,568 L225,565 L221,561 L219,556 L217,552 L215,548 L214,544 L212,540 L210,537 L207,534 L202,531 L197,528 L192,524 L187,520 L184,515 L182,510 L182,504 L183,499 L187,495 L192,491 L198,488 L204,485 L211,483 L217,482 L222,480 L228,479 L233,477 L238,476 L244,475 L249,475 L255,475 L260,475 L265,476 L270,478 L275,479 L280,480 L285,480 L291,481 L297,481 L304,482 L311,482 L318,484 L324,487 L330,490 L334,495 L336,500 L336,505 L334,510 L331,515 L327,520Z"/>
+<path d="M372,520 L366,527 L360,533 L356,539 L354,545 L352,552 L350,558 L348,565 L345,573 L340,579 L334,585 L327,590 L318,595 L309,598 L299,600 L290,602 L280,604 L270,606 L260,607 L250,608 L239,608 L228,607 L218,605 L209,601 L202,595 L196,588 L191,581 L188,573 L186,566 L184,560 L181,554 L176,549 L170,544 L162,539 L153,534 L144,527 L137,520 L131,512 L128,503 L129,494 L132,486 L139,478 L147,472 L157,466 L167,462 L177,459 L187,455 L196,453 L205,450 L214,447 L223,445 L232,444 L242,444 L251,444 L260,445 L269,447 L277,450 L285,452 L293,453 L302,454 L311,454 L322,454 L334,455 L346,456 L358,459 L369,463 L378,470 L384,477 L387,486 L386,495 L383,504 L378,512 L372,520Z"/>
+<path d="M416,520 L408,530 L401,538 L396,547 L393,556 L390,565 L388,575 L384,584 L379,594 L372,603 L364,611 L353,618 L341,624 L328,628 L315,632 L302,635 L288,638 L274,641 L260,644 L245,645 L230,645 L215,644 L201,640 L189,634 L178,625 L170,615 L164,604 L160,594 L157,584 L154,575 L149,568 L142,561 L132,554 L121,548 L108,540 L96,531 L86,520 L78,508 L75,496 L76,484 L82,472 L91,462 L103,453 L116,445 L130,439 L144,434 L157,429 L170,424 L182,420 L195,417 L208,414 L221,413 L234,412 L247,414 L260,416 L272,419 L283,422 L294,425 L306,427 L318,427 L332,427 L348,427 L365,428 L382,430 L399,434 L414,440 L426,449 L434,460 L437,472 L436,485 L431,498 L424,509 L416,520Z"/>
+<path d="M459,520 L450,532 L442,544 L437,555 L433,567 L429,579 L426,591 L421,604 L414,616 L405,627 L393,637 L379,645 L363,652 L347,658 L330,663 L313,668 L296,672 L278,677 L260,680 L241,683 L221,683 L202,681 L184,675 L168,666 L155,655 L145,641 L138,627 L133,614 L129,601 L124,590 L117,581 L107,573 L94,565 L79,556 L62,546 L47,534 L34,520 L25,505 L22,489 L25,473 L32,459 L44,445 L59,434 L76,424 L93,416 L110,409 L126,402 L143,396 L159,390 L175,386 L192,382 L210,381 L227,382 L244,384 L260,388 L275,392 L290,396 L304,399 L319,400 L335,401 L354,400 L374,399 L396,400 L419,402 L441,408 L459,417 L474,428 L483,443 L487,459 L485,475 L478,491 L469,506 L459,520Z"/>
+<path d="M503,520 L492,535 L484,549 L478,563 L474,578 L470,592 L465,608 L458,623 L449,637 L436,651 L421,662 L404,672 L385,680 L365,687 L345,694 L325,700 L304,707 L283,713 L260,718 L236,721 L212,721 L188,718 L166,710 L147,699 L132,684 L121,667 L113,650 L107,634 L101,619 L95,606 L85,595 L72,585 L55,575 L36,565 L16,552 L-3,537 L-18,520 L-27,501 L-30,482 L-26,463 L-16,445 L-2,430 L16,416 L36,404 L56,393 L76,383 L95,375 L115,367 L135,360 L155,354 L177,351 L198,349 L220,351 L240,355 L260,360 L278,365 L296,370 L313,373 L332,374 L352,374 L375,372 L401,371 L428,371 L456,375 L482,382 L505,393 L522,408 L532,426 L535,446 L532,466 L524,485 L514,504 L503,520Z"/>
+<path d="M546,520 L535,538 L527,555 L520,572 L516,589 L511,607 L505,625 L496,642 L484,659 L468,674 L449,687 L428,698 L406,708 L383,716 L361,725 L337,733 L313,742 L287,750 L260,756 L232,760 L203,760 L175,755 L149,746 L127,731 L110,713 L97,693 L88,672 L81,653 L74,636 L65,621 L52,609 L36,597 L15,586 L-8,573 L-32,558 L-53,540 L-70,520 L-80,498 L-82,475 L-76,453 L-64,433 L-47,414 L-26,398 L-4,383 L18,370 L41,358 L64,347 L87,337 L111,328 L135,322 L161,318 L187,318 L213,321 L237,326 L260,332 L281,339 L302,344 L322,347 L345,348 L369,346 L397,344 L428,342 L461,342 L494,347 L525,356 L550,369 L569,388 L580,409 L583,433 L579,457 L570,480 L558,501 L546,520Z"/>
+<path d="M590,520 L579,541 L570,561 L564,580 L558,600 L553,621 L545,642 L533,662 L518,680 L499,697 L476,711 L452,723 L427,734 L401,745 L376,755 L349,766 L321,777 L292,787 L260,795 L227,800 L193,799 L161,793 L132,780 L107,763 L88,741 L74,717 L63,694 L55,672 L47,653 L35,637 L19,623 L-1,610 L-26,597 L-53,582 L-80,564 L-104,544 L-121,520 L-131,495 L-132,469 L-125,444 L-111,420 L-91,399 L-68,380 L-44,362 L-19,346 L6,332 L31,318 L58,306 L86,296 L115,290 L145,286 L176,287 L206,291 L234,298 L260,306 L284,314 L308,319 L332,322 L358,321 L387,319 L420,315 L456,312 L494,313 L532,318 L567,329 L596,346 L616,368 L627,393 L630,420 L625,448 L615,474 L602,498 L590,520Z"/></svg>
     <div class="wrap">
       <div>
         <div class="who">
@@ -336,7 +385,23 @@
           </div>
         </article>
 
+        <article class="project wide">
+          <button class="shot" type="button" data-full="images/projects/hotel-dashboard.webp" aria-label="Enlarge: Tableau dashboard of European hotel review scores and tone, 2015 to 2017"><img src="images/projects/hotel-dashboard.webp" alt="Tableau dashboard of European hotel review scores and tone, 2015 to 2017" loading="lazy" /><span class="zoom">Enlarge</span></button>
+          <div class="wide-text">
+            <div>
+            <h3>European hotel reviews dashboard</h3>
+            <div class="context">Data Visualization, UIUC, published on Tableau Public</div>
+            <p>An interactive Tableau dashboard of European hotel reviews from 2015 to 2017. A map of the six cities, quarterly box plots of review scores, and a "tone" histogram measuring whether each review used more positive or negative words. Visitors can filter by score, month, and the reviewer's home continent.</p>
+            </div>
+            <div>
+            <ul class="tags"><li>Tableau</li><li>Dashboard design</li><li>Text features</li></ul>
+            <p class="link"><a href="https://public.tableau.com/app/profile/alexanderpoirier">Explore it on Tableau Public</a></p>
+            </div>
+          </div>
+        </article>
+
         <article class="project">
+          <button class="shot" type="button" data-full="images/projects/movie-recommender.webp" aria-label="Enlarge: Bar charts comparing a user's most-rated genres with the genres of their recommended movies"><img src="images/projects/movie-recommender.webp" alt="Bar charts comparing a user's most-rated genres with the genres of their recommended movies" loading="lazy" /><span class="zoom">Enlarge</span></button>
           <h3>Movie recommender</h3>
           <div class="context">Practical Statistical Learning, UIUC team project</div>
           <p>Item-based collaborative filtering on MovieLens, built from scratch: a mean-centered sparse ratings matrix, cosine similarity between movies, the top 30 neighbors per movie, and a popularity fallback for users with too few ratings.</p>
@@ -345,6 +410,7 @@
         </article>
 
         <article class="project">
+          <button class="shot" type="button" data-full="images/projects/menu-workflow.webp" aria-label="Enlarge: YesWorkflow provenance graph of the OpenRefine cleaning steps"><img src="images/projects/menu-workflow.webp" alt="YesWorkflow provenance graph of the OpenRefine cleaning steps" loading="lazy" /><span class="zoom">Enlarge</span></button>
           <h3>Historical menu data cleaning</h3>
           <div class="context">Data Cleaning for Data Science, UIUC final project</div>
           <p>Cleaned a multi-table historical menu dataset: standardized free-text event names in OpenRefine, validated dates in Python, and compared before-and-after results with SQL in SQLite.</p>
@@ -353,6 +419,7 @@
         </article>
 
         <article class="project">
+          <button class="shot" type="button" data-full="images/projects/sunshine-diagnostics.webp" aria-label="Enlarge: Fitted versus residual plots for the additive, AIC, BIC, and interaction models"><img src="images/projects/sunshine-diagnostics.webp" alt="Fitted versus residual plots for the additive, AIC, BIC, and interaction models" loading="lazy" /><span class="zoom">Enlarge</span></button>
           <h3>Predicting daily sunshine</h3>
           <div class="context">Statistical Modeling in R, UIUC team project</div>
           <p>Regression on Australian weather data, comparing additive, AIC, BIC, and interaction models with Breusch&ndash;Pagan, Q&ndash;Q, VIF, and Cook's distance diagnostics.</p>
@@ -361,6 +428,7 @@
         </article>
 
         <article class="project">
+          <button class="shot" type="button" data-full="images/projects/simulation-rmse.webp" aria-label="Enlarge: Train and test RMSE by model complexity at three noise levels"><img src="images/projects/simulation-rmse.webp" alt="Train and test RMSE by model complexity at three noise levels" loading="lazy" /><span class="zoom">Enlarge</span></button>
           <h3>Simulation studies</h3>
           <div class="context">Statistical Modeling in R, UIUC</div>
           <p>Monte Carlo experiments showing how noise affects significance tests, RMSE-based model selection, and statistical power when the true model is known.</p>
@@ -369,7 +437,7 @@
         </article>
       </div>
 
-      <p class="also"><b>Earlier work:</b> NFL analytics for BlitzStats and a Carolina Panthers deep dive, both on my <a href="https://public.tableau.com/app/profile/alexanderpoirier">Tableau Public profile</a>.</p>
+      <p class="also"><b>More on Tableau Public:</b> NFL analytics from BlitzStats and a Carolina Panthers deep dive, on my <a href="https://public.tableau.com/app/profile/alexanderpoirier">Tableau Public profile</a>.</p>
     </div>
   </section>
 
@@ -425,5 +493,25 @@
 <footer>
   <div class="wrap">&copy; 2026 Alexander Poirier</div>
 </footer>
+<dialog class="viewer" id="viewer" aria-label="Enlarged project image">
+  <button type="button" id="viewer-close">Close</button>
+  <img id="viewer-img" alt="" />
+  <p id="viewer-cap"></p>
+</dialog>
+<script>
+  (function () {
+    var d = document.getElementById('viewer'), img = document.getElementById('viewer-img'), cap = document.getElementById('viewer-cap');
+    if (!d || typeof d.showModal !== 'function') return;
+    document.querySelectorAll('.shot').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var i = b.querySelector('img');
+        img.src = b.getAttribute('data-full'); img.alt = i.alt; cap.textContent = i.alt;
+        d.showModal();
+      });
+    });
+    document.getElementById('viewer-close').addEventListener('click', function () { d.close(); });
+    d.addEventListener('click', function (e) { if (e.target === d) d.close(); });
+  })();
+</script>
 </body>
 </html>
