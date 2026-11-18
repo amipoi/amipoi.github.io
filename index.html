@@ -1,470 +1,429 @@
-<!DOCTYPE HTML>
-<!--
-	Read Only by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Read Only by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Alexander Poirier | Data Scientist</title>
+<meta name="description" content="Alexander Poirier is a data scientist at Lattice Semiconductor who builds demand forecasting models, data pipelines, and AI training. MCS-DS, University of Illinois Urbana-Champaign." />
+<meta property="og:title" content="Alexander Poirier | Data Scientist" />
+<meta property="og:description" content="Demand forecasting, statistical modeling, and AI enablement at Lattice Semiconductor." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --paper: #f5f7fa;
+    --surface: #ffffff;
+    --ink: #172033;
+    --muted: #5b6577;
+    --rule: #dce1e8;
+    --cobalt: #2b59e0;
+    --band: rgba(43, 89, 224, 0.14);
+    --amber: #c97f0c;
+    --display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+    --body: "Public Sans", "Segoe UI", system-ui, sans-serif;
+    --max: 1100px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #121826;
+      --surface: #182033;
+      --ink: #e6eaf2;
+      --muted: #9aa5b8;
+      --rule: #2a3550;
+      --cobalt: #7fa0ff;
+      --band: rgba(127, 160, 255, 0.18);
+      --amber: #f0b44c;
+    }
+  }
 
-		<!-- Header -->
-			<section id="header">
-				<header>
-					<span class="image avatar"><img src="images/avatar.jpg" alt="" /></span>
-					<h1 id="logo"><a href="#">Alexander Poirier</a></h1>
-					<p>Data Analyst<br />
-						Portfolio surrounding various projects<br />
-						and interests that I have.<br />
-						 Enjoy!</p>
-				</header>
-				<nav id="nav">
-					<ul>
-						<li><a href="#one" class="active">About</a></li>
-						<li><a href="#two">Skill Set and Interests</a></li>
-						<li><a href="#three">Interesting Links</a></li>
-					</ul>
-				</nav>
-				<footer>
-					<ul class="icons">
-						<li><a href="https://www.linkedin.com/in/apoirier2020/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-						<li><a href="https://public.tableau.com/app/profile/alexanderpoirier" class="icon solid fa-user"><span class="label">Instagram</span></a></li>
-						<li><a href="https://github.com/amipoi" class="icon brands fa-github"><span class="label">Github</span></a></li>
-						<li><a href="mailto: amipoi25@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-					</ul>
-				</footer>
-			</section>
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 4.5rem; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 400 1.0625rem/1.65 var(--body);
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration-color: var(--cobalt); text-underline-offset: 0.2em; text-decoration-thickness: 2px; }
+  a:hover { color: var(--cobalt); }
+  :focus-visible { outline: 3px solid var(--cobalt); outline-offset: 3px; border-radius: 2px; }
+  img { max-width: 100%; display: block; }
+  h1, h2, h3 { font-family: var(--display); line-height: 1.1; margin: 0; letter-spacing: -0.02em; }
+  p { margin: 0 0 1em; }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem; }
+  .skip { position: absolute; left: -999px; }
+  .skip:focus { left: 1rem; top: 1rem; background: var(--surface); padding: 0.5rem 1rem; z-index: 10; }
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+  /* Top bar */
+  .top {
+    position: sticky; top: 0; z-index: 5;
+    background: color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--rule);
+  }
+  .top .wrap { display: flex; align-items: center; justify-content: space-between; height: 3.75rem; gap: 1rem; }
+  .brand { font-family: var(--display); font-weight: 700; font-size: 1.1rem; text-decoration: none; }
+  .top nav ul { display: flex; gap: 1.5rem; list-style: none; margin: 0; padding: 0; font-size: 0.95rem; }
+  .top nav a { text-decoration: none; color: var(--muted); }
+  .top nav a:hover { color: var(--ink); }
 
-				<!-- Main -->
-					<div id="main">
+  /* Hero */
+  .hero { padding: 4.5rem 0 3.5rem; }
+  .hero .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 3.5rem; align-items: center; }
+  .who { display: flex; align-items: center; gap: 0.9rem; margin-bottom: 1.75rem; color: var(--muted); font-size: 0.98rem; line-height: 1.4; }
+  .who img { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; }
+  .who strong { color: var(--ink); font-weight: 600; display: block; }
+  .hero h1 { font-size: clamp(2.5rem, 5.4vw, 4.25rem); font-weight: 800; letter-spacing: -0.035em; margin-bottom: 1.25rem; }
+  .lede { font-size: 1.2rem; color: var(--muted); max-width: 34em; }
+  .actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
+  .btn {
+    display: inline-flex; align-items: center; padding: 0.75rem 1.3rem; border-radius: 999px;
+    font-weight: 600; font-size: 0.98rem; text-decoration: none; border: 2px solid var(--ink);
+  }
+  .btn.solid { background: var(--ink); color: var(--paper); }
+  .btn.solid:hover { background: var(--cobalt); border-color: var(--cobalt); color: #fff; }
+  .btn:not(.solid):hover { border-color: var(--cobalt); color: var(--cobalt); }
 
-						<!-- One -->
-							<section id="one">
-								<div class="image main" data-position="center">
-									<img src="images/electric-forest.jpg" alt="" />
-								</div>
-								<div class="container">
-									<header class="major">
-										<h2>Welcome to my website</h2>
-										<p>San Jose Data Analyst, SoCal Native<br /></p>
-									</header>
-									<p>My name is Alexander Poirier. I am a Data Analyst at the company <a href="https://www.latticesemi.com/">Lattice Semiconductor</a>. <br />
-										I am passionate about the fields of Data Analysis, Sustainability, and Health/Fitness. <br /> 
-										In my free time I enjoy practing Shaolin Kung Fu, watching the Carolina Panthers, and going to concerts. </p>
-								</div>
-							</section>
+  .chart { background: var(--surface); border: 1px solid var(--rule); border-radius: 18px; padding: 1.25rem 1.25rem 1rem; }
+  .chart svg { width: 100%; height: auto; overflow: visible; }
+  .grid line { stroke: var(--rule); stroke-width: 1; }
+  .actual { fill: none; stroke: var(--ink); stroke-width: 2.5; stroke-linejoin: round; stroke-linecap: round; }
+  .forecast { fill: none; stroke: var(--cobalt); stroke-width: 3; stroke-linejoin: round; stroke-linecap: round; }
+  .band { fill: var(--band); }
+  .now { stroke: var(--amber); stroke-width: 1.5; stroke-dasharray: 4 4; }
+  .now-label { fill: var(--amber); font: 600 17px var(--body); }
+  .legend { display: flex; flex-wrap: wrap; gap: 0.4rem 1.25rem; margin: 0.75rem 0 0; padding: 0; list-style: none; font-size: 0.85rem; color: var(--muted); }
+  .legend li { display: flex; align-items: center; gap: 0.45rem; }
+  .key { width: 18px; height: 3px; border-radius: 2px; background: var(--ink); }
+  .key.fc { background: var(--cobalt); }
+  .key.bd { height: 10px; background: var(--band); }
 
-						<!-- Two -->
-							<section id="two">
-								<div class="container">
-									<h3>Current Strengths and Expertise</h3>
-									<p>Brief Overview:</p>
-									<ul class="feature-icons">
-										<li class="icon solid fa-chart-line"> Tableau</li>
-										<li class="icon solid fa-chart-bar">Microsoft Power BI</li>
-										<li class="icon solid fa-chart-pie">Oracle Analytics</li>
-										<li class="icon solid fa-landmark">Revenue Insight</li>
-										<li class="icon solid fa-truck-moving">Inventory Analysis </li>
-										<li class="icon solid fa-warehouse">Channel Management </li>
-										<li class="icon brands fa-java">Java</li>
-										<li class="icon brands fa-python">Python</li>
-									</ul>
-								</div>
-							</section>
+  /* Draw-on-load: the one moment of motion */
+  @media (prefers-reduced-motion: no-preference) {
+    .actual { stroke-dasharray: 1100; stroke-dashoffset: 1100; animation: draw 1.4s ease-out 0.2s forwards; }
+    .forecast { stroke-dasharray: 360; stroke-dashoffset: 360; animation: draw 0.9s ease-out 1.6s forwards; }
+    .band, .now, .now-label { opacity: 0; animation: fade 0.8s ease-out 1.5s forwards; }
+  }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+  @keyframes fade { to { opacity: 1; } }
 
-						<!-- Three -->
-							<section id="three">
-								<div class="container">
-									<h3>Deeper Dive</h3>
-									<p>Here are some easy links to my Resume and big projects I have done. You can also see my full profiles on each platform if you click on the pictures below or the icons on the bottom right of your screen.</p>
-									<div class="features">
-										<article>
-											<a href="images/Alexander_Poirier_Resume_10_19_2023.pdf" class="image"><img src="images/CroppedResume.gif" alt="" /></a>
-											<div class="inner">
-												<h4>Resume</h4>
-												<p>Here you can check out my Resume to give you a general overview of my accomplishments.</p>
-											</div>
-										</article>
-										<article>
-											<a href="https://public.tableau.com/app/profile/alexanderpoirier" class="image"><img src="images/TableauPublic.png" alt="" /></a>
-											<div class="inner">
-												<h4>Tableau Public Profile</h4>
-												<p>Here you can see all of my independent Data Analysis projects outside of work. The picture has one of the visuals I used in the Analysis of the Carolina Panthers. Go check it out!</p>
-											</div>
-										</article>
-										<article>
-											<a href="https://github.com/amipoi" class="image"><img src="images/GitHub.jpg" alt="" /></a>
-											<div class="inner">
-												<h4>Github Profile</h4>
-												<p>This is where I host this website I built, house coding projects, and even SQL queries. My work is usually done with either SQL, Java, or Python.</p>
-											</div>
-										</article>
-									</div>
-								</div>
-							</section>
+  /* Facts strip */
+  .facts { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); background: var(--surface); }
+  .facts ul { display: grid; grid-template-columns: repeat(4, 1fr); list-style: none; margin: 0; padding: 0; }
+  .facts li { padding: 1.5rem 1.5rem 1.5rem 0; font-size: 0.95rem; color: var(--muted); line-height: 1.45; }
+  .facts li + li { padding-left: 1.5rem; border-left: 1px solid var(--rule); }
+  .facts b { display: block; font: 700 1.6rem/1.2 var(--display); color: var(--ink); margin-bottom: 0.2rem; letter-spacing: -0.02em; }
 
+  /* Sections */
+  section.block { padding: 5rem 0 1rem; }
+  .block-head { display: grid; grid-template-columns: 15rem 1fr; gap: 2.5rem; margin-bottom: 2.5rem; }
+  .block-head h2 { font-size: 2.25rem; font-weight: 700; }
+  .block-head p { color: var(--muted); max-width: 38em; margin: 0.4rem 0 0; }
 
+  /* Experience timeline */
+  .roles { list-style: none; margin: 0; padding: 0; }
+  .role { display: grid; grid-template-columns: 15rem 1fr; gap: 2.5rem; padding: 2rem 0; border-top: 1px solid var(--rule); }
+  .when { color: var(--muted); font-size: 0.95rem; padding-top: 0.25rem; }
+  .when b { display: block; color: var(--ink); font-weight: 600; }
+  .role h3 { font-size: 1.4rem; font-weight: 700; margin-bottom: 0.2rem; }
+  .org { color: var(--muted); margin-bottom: 0.9rem; }
+  .role ul { margin: 0; padding-left: 1.1rem; max-width: 46em; }
+  .role li { margin-bottom: 0.4rem; }
+  .role li::marker { color: var(--cobalt); }
 
-						<!-- Five -->
-						<!--
-							<section id="five">
-								<div class="container">
-									<h3>Elements</h3>
+  /* Projects */
+  .projects { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
+  .project { background: var(--surface); border: 1px solid var(--rule); border-radius: 18px; padding: 1.75rem; display: flex; flex-direction: column; }
+  .project.feature { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; border-color: var(--cobalt); }
+  .project h3 { font-size: 1.35rem; font-weight: 700; margin-bottom: 0.25rem; }
+  .context { color: var(--muted); font-size: 0.92rem; margin-bottom: 1rem; }
+  .finding { border-left: 3px solid var(--amber); padding-left: 1rem; color: var(--ink); }
+  .finding strong { display: block; font-size: 0.9rem; color: var(--amber); margin-bottom: 0.15rem; }
+  .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; list-style: none; margin: auto 0 0; padding: 1rem 0 0; }
+  .tags li { font-size: 0.8rem; padding: 0.2rem 0.65rem; border-radius: 999px; background: var(--paper); border: 1px solid var(--rule); color: var(--muted); }
+  .project .link { margin-top: 1rem; font-weight: 600; }
 
-									<section>
-										<h4>Text</h4>
-										<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-										This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-										This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-										<hr />
-										<header>
-											<h4>Heading with a Subtitle</h4>
-											<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-										</header>
-										<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-										<header>
-											<h5>Heading with a Subtitle</h5>
-											<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-										</header>
-										<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-										<hr />
-										<h2>Heading Level 2</h2>
-										<h3>Heading Level 3</h3>
-										<h4>Heading Level 4</h4>
-										<h5>Heading Level 5</h5>
-										<h6>Heading Level 6</h6>
-										<hr />
-										<h5>Blockquote</h5>
-										<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
-										<h5>Preformatted</h5>
-										<pre><code>i = 0;
+  .also { margin-top: 1.75rem; color: var(--muted); max-width: 52em; }
+  .also b { color: var(--ink); }
 
-while (!deck.isInOrder()) {
-    print 'Iteration ' + i;
-    deck.shuffle();
-    i++;
-}
+  /* Education + skills */
+  .two { display: grid; grid-template-columns: 15rem 1fr; gap: 2.5rem; }
+  .schools { list-style: none; margin: 0; padding: 0; }
+  .schools li { padding: 1.25rem 0; border-top: 1px solid var(--rule); }
+  .schools li:first-child { border-top: 0; padding-top: 0; }
+  .schools h3 { font-size: 1.2rem; font-weight: 700; }
+  .schools p { margin: 0.2rem 0 0; color: var(--muted); }
+  .skills { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem 2.5rem; margin-top: 3rem; }
+  .skills h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.35rem; }
+  .skills p { color: var(--muted); margin: 0; }
 
-print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
-									</section>
+  /* Contact */
+  .contact { margin-top: 5rem; background: var(--ink); color: var(--paper); }
+  .contact .wrap { padding-top: 4rem; padding-bottom: 4rem; display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem; align-items: end; }
+  .contact h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; margin-bottom: 1rem; }
+  .contact p { opacity: 0.8; max-width: 30em; }
+  .contact ul { list-style: none; margin: 0; padding: 0; }
+  .contact li { border-top: 1px solid color-mix(in srgb, var(--paper) 22%, transparent); }
+  .contact li a { display: flex; justify-content: space-between; padding: 0.9rem 0; text-decoration: none; font-weight: 600; }
+  .contact li a span { opacity: 0.65; font-weight: 400; }
+  .contact li a:hover { color: var(--amber); }
+  .contact .btn.solid { background: var(--paper); color: var(--ink); border-color: var(--paper); }
+  .contact .btn.solid:hover { background: var(--amber); border-color: var(--amber); color: #172033; }
+  footer { padding: 1.5rem 0; font-size: 0.85rem; color: var(--muted); }
 
-									<section>
-										<h4>Lists</h4>
-										<div class="row">
-											<div class="col-6 col-12-xsmall">
-												<h5>Unordered</h5>
-												<ul>
-													<li>Dolor pulvinar etiam magna etiam.</li>
-													<li>Sagittis adipiscing lorem eleifend.</li>
-													<li>Felis enim feugiat dolore viverra.</li>
-												</ul>
-												<h5>Alternate</h5>
-												<ul class="alt">
-													<li>Dolor pulvinar etiam magna etiam.</li>
-													<li>Sagittis adipiscing lorem eleifend.</li>
-													<li>Felis enim feugiat dolore viverra.</li>
-												</ul>
-											</div>
-											<div class="col-6 col-12-xsmall">
-												<h5>Ordered</h5>
-												<ol>
-													<li>Dolor pulvinar etiam magna etiam.</li>
-													<li>Etiam vel felis at lorem sed viverra.</li>
-													<li>Felis enim feugiat dolore viverra.</li>
-													<li>Dolor pulvinar etiam magna etiam.</li>
-													<li>Etiam vel felis at lorem sed viverra.</li>
-													<li>Felis enim feugiat dolore viverra.</li>
-												</ol>
-												<h5>Icons</h5>
-												<ul class="icons">
-													<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-													<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-													<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-													<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-													<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-													<li><a href="#" class="icon brands fa-tumblr"><span class="label">Tumblr</span></a></li>
-												</ul>
-											</div>
-										</div>
-										<h5>Actions</h5>
-										<ul class="actions">
-											<li><a href="#" class="button primary">Default</a></li>
-											<li><a href="#" class="button">Default</a></li>
-											<li><a href="#" class="button alt">Default</a></li>
-										</ul>
-										<ul class="actions small">
-											<li><a href="#" class="button primary small">Small</a></li>
-											<li><a href="#" class="button small">Small</a></li>
-											<li><a href="#" class="button alt small">Small</a></li>
-										</ul>
-										<div class="row">
-											<div class="col-3 col-6-medium col-12-xsmall">
-												<ul class="actions stacked">
-													<li><a href="#" class="button primary">Default</a></li>
-													<li><a href="#" class="button">Default</a></li>
-													<li><a href="#" class="button alt">Default</a></li>
-												</ul>
-											</div>
-											<div class="col-3 col-6 col-12-xsmall">
-												<ul class="actions stacked">
-													<li><a href="#" class="button primary small">Small</a></li>
-													<li><a href="#" class="button small">Small</a></li>
-													<li><a href="#" class="button alt small">Small</a></li>
-												</ul>
-											</div>
-											<div class="col-3 col-6-medium col-12-xsmall">
-												<ul class="actions stacked">
-													<li><a href="#" class="button primary fit">Default</a></li>
-													<li><a href="#" class="button fit">Default</a></li>
-													<li><a href="#" class="button alt fit">Default</a></li>
-												</ul>
-											</div>
-											<div class="col-3 col-6-medium col-12-xsmall">
-												<ul class="actions stacked">
-													<li><a href="#" class="button primary small fit">Small</a></li>
-													<li><a href="#" class="button small fit">Small</a></li>
-													<li><a href="#" class="button alt small fit">Small</a></li>
-												</ul>
-											</div>
-										</div>
-									</section>
+  @media (max-width: 900px) {
+    .hero { padding-top: 2.5rem; }
+    .hero .wrap, .block-head, .role, .two, .contact .wrap, .project.feature { grid-template-columns: 1fr; gap: 1.25rem; }
+    .facts ul { grid-template-columns: repeat(2, 1fr); }
+    .facts li, .facts li + li { padding: 1.25rem 1rem; border-left: 0; }
+    .facts li:nth-child(even) { border-left: 1px solid var(--rule); }
+    .facts li:nth-child(n+3) { border-top: 1px solid var(--rule); }
+    .projects, .skills { grid-template-columns: 1fr; }
+    .top nav { display: none; }
+    section.block { padding-top: 3.5rem; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
 
-									<section>
-										<h4>Table</h4>
-										<h5>Default</h5>
-										<div class="table-wrapper">
-											<table>
-												<thead>
-													<tr>
-														<th>Name</th>
-														<th>Description</th>
-														<th>Price</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>Item One</td>
-														<td>Ante turpis integer aliquet porttitor.</td>
-														<td>29.99</td>
-													</tr>
-													<tr>
-														<td>Item Two</td>
-														<td>Vis ac commodo adipiscing arcu aliquet.</td>
-														<td>19.99</td>
-													</tr>
-													<tr>
-														<td>Item Three</td>
-														<td> Morbi faucibus arcu accumsan lorem.</td>
-														<td>29.99</td>
-													</tr>
-													<tr>
-														<td>Item Four</td>
-														<td>Vitae integer tempus condimentum.</td>
-														<td>19.99</td>
-													</tr>
-													<tr>
-														<td>Item Five</td>
-														<td>Ante turpis integer aliquet porttitor.</td>
-														<td>29.99</td>
-													</tr>
-												</tbody>
-												<tfoot>
-													<tr>
-														<td colspan="2"></td>
-														<td>100.00</td>
-													</tr>
-												</tfoot>
-											</table>
-										</div>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#">Alexander Poirier</a>
+    <nav aria-label="Sections">
+      <ul>
+        <li><a href="#work">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-										<h5>Alternate</h5>
-										<div class="table-wrapper">
-											<table class="alt">
-												<thead>
-													<tr>
-														<th>Name</th>
-														<th>Description</th>
-														<th>Price</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>Item One</td>
-														<td>Ante turpis integer aliquet porttitor.</td>
-														<td>29.99</td>
-													</tr>
-													<tr>
-														<td>Item Two</td>
-														<td>Vis ac commodo adipiscing arcu aliquet.</td>
-														<td>19.99</td>
-													</tr>
-													<tr>
-														<td>Item Three</td>
-														<td> Morbi faucibus arcu accumsan lorem.</td>
-														<td>29.99</td>
-													</tr>
-													<tr>
-														<td>Item Four</td>
-														<td>Vitae integer tempus condimentum.</td>
-														<td>19.99</td>
-													</tr>
-													<tr>
-														<td>Item Five</td>
-														<td>Ante turpis integer aliquet porttitor.</td>
-														<td>29.99</td>
-													</tr>
-												</tbody>
-												<tfoot>
-													<tr>
-														<td colspan="2"></td>
-														<td>100.00</td>
-													</tr>
-												</tfoot>
-											</table>
-										</div>
-									</section>
+<main id="main">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <div class="who">
+          <img src="images/avatar-480.jpg" alt="Alexander Poirier" width="56" height="56" />
+          <div><strong>Data Scientist, Lattice Semiconductor</strong>MCS-DS, University of Illinois</div>
+        </div>
+        <h1>I build the forecasts a $1B+ build plan runs on.</h1>
+        <p class="lede">I turn messy demand signals into statistical forecasts, the pipelines that make them traceable, and the tools leadership uses to see when a forecast starts to drift.</p>
+        <div class="actions">
+          <a class="btn solid" href="images/Resume_Alexander_Poirier_2026.pdf">View resume</a>
+          <a class="btn" href="mailto:amipoi25@gmail.com">Email me</a>
+        </div>
+      </div>
 
-									<section>
-										<h4>Buttons</h4>
-										<ul class="actions">
-											<li><a href="#" class="button primary">Primary</a></li>
-											<li><a href="#" class="button">Default</a></li>
-											<li><a href="#" class="button alt">Alternate</a></li>
-										</ul>
-										<ul class="actions">
-											<li><a href="#" class="button primary large">Large</a></li>
-											<li><a href="#" class="button">Default</a></li>
-											<li><a href="#" class="button alt small">Small</a></li>
-										</ul>
-										<ul class="actions fit">
-											<li><a href="#" class="button primary fit">Fit</a></li>
-											<li><a href="#" class="button fit">Fit</a></li>
-											<li><a href="#" class="button alt fit">Fit</a></li>
-										</ul>
-										<ul class="actions fit small">
-											<li><a href="#" class="button primary fit small">Fit + Small</a></li>
-											<li><a href="#" class="button fit small">Fit + Small</a></li>
-											<li><a href="#" class="button alt fit small">Fit + Small</a></li>
-										</ul>
-										<ul class="actions">
-											<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
-											<li><a href="#" class="button icon solid fa-download">Icon</a></li>
-											<li><a href="#" class="button alt icon solid fa-check">Icon</a></li>
-										</ul>
-										<ul class="actions">
-											<li><span class="button primary disabled">Primary</span></li>
-											<li><span class="button disabled">Default</span></li>
-											<li><span class="button alt disabled">Alternate</span></li>
-										</ul>
-									</section>
+      <figure class="chart" aria-label="Illustration of a demand forecast: past demand as a solid line, then a forecast line with a widening uncertainty band">
+        <svg viewBox="0 0 640 260" role="img" aria-hidden="true">
+          <g class="grid">
+            <line x1="20" x2="620" y1="30" y2="30" /><line x1="20" x2="620" y1="90" y2="90" />
+            <line x1="20" x2="620" y1="150" y2="150" /><line x1="20" x2="620" y1="210" y2="210" />
+          </g>
+          <path class="band" d="M448.6,161.0 L465.7,146.3 L482.9,124.5 L500.0,86.5 L517.1,48.5 L534.3,26.6 L551.4,27.2 L568.6,43.8 L585.7,60.4 L602.9,60.9 L620.0,39.1 L620.0,217.5 L602.9,223.7 L585.7,207.4 L568.6,175.0 L551.4,142.6 L534.3,126.4 L517.1,132.5 L500.0,154.7 L482.9,177.0 L465.7,183.1 L448.6,161.0 Z" />
+          <path class="actual" d="M20.0,195.8 L37.1,229.6 L54.3,229.1 L71.4,214.0 L88.6,176.4 L105.7,155.2 L122.9,157.3 L140.0,157.3 L157.1,189.4 L174.3,204.1 L191.4,214.4 L208.6,197.8 L225.7,144.9 L242.9,145.8 L260.0,127.4 L277.1,135.8 L294.3,133.5 L311.4,157.2 L328.6,176.2 L345.7,167.3 L362.9,146.7 L380.0,112.4 L397.1,105.2 L414.3,99.4 L431.4,135.6 L448.6,161.0" />
+          <path class="forecast" d="M448.6,161.0 L465.7,164.7 L482.9,150.7 L500.0,120.6 L517.1,90.5 L534.3,76.5 L551.4,84.9 L568.6,109.4 L585.7,133.9 L602.9,142.3 L620.0,128.3" />
+          <line class="now" x1="448.6" x2="448.6" y1="4" y2="240" />
+          <text class="now-label" x="440" y="18" text-anchor="end">Today</text>
+        </svg>
+        <figcaption>
+          <ul class="legend">
+            <li><span class="key"></span>Actual demand</li>
+            <li><span class="key fc"></span>Forecast</li>
+            <li><span class="key bd"></span>Uncertainty band</li>
+          </ul>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
 
-									<section>
-										<h4>Form</h4>
-										<form method="post" action="#">
-											<div class="row gtr-uniform">
-												<div class="col-6 col-12-xsmall">
-													<input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" />
-												</div>
-												<div class="col-6 col-12-xsmall">
-													<input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" />
-												</div>
-												<div class="col-12">
-													<select name="demo-category" id="demo-category">
-														<option value="">- Category -</option>
-														<option value="1">Manufacturing</option>
-														<option value="1">Shipping</option>
-														<option value="1">Administration</option>
-														<option value="1">Human Resources</option>
-													</select>
-												</div>
-												<div class="col-4 col-12-medium">
-													<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-													<label for="demo-priority-low">Low Priority</label>
-												</div>
-												<div class="col-4 col-12-medium">
-													<input type="radio" id="demo-priority-normal" name="demo-priority">
-													<label for="demo-priority-normal">Normal Priority</label>
-												</div>
-												<div class="col-4 col-12-medium">
-													<input type="radio" id="demo-priority-high" name="demo-priority">
-													<label for="demo-priority-high">High Priority</label>
-												</div>
-												<div class="col-6 col-12-medium">
-													<input type="checkbox" id="demo-copy" name="demo-copy">
-													<label for="demo-copy">Email me a copy of this message</label>
-												</div>
-												<div class="col-6 col-12-medium">
-													<input type="checkbox" id="demo-human" name="demo-human" checked>
-													<label for="demo-human">I am a human and not a robot</label>
-												</div>
-												<div class="col-12">
-													<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-												</div>
-												<div class="col-12">
-													<ul class="actions">
-														<li><input type="submit" value="Send Message" /></li>
-														<li><input type="reset" value="Reset" class="alt" /></li>
-													</ul>
-												</div>
-											</div>
-										</form>
-									</section>
+  <div class="facts">
+    <div class="wrap">
+      <ul>
+        <li><b>$1B+</b>forecast signal I own, driving the company build plan</li>
+        <li><b>~10%</b>more accurate than the naive model it replaced</li>
+        <li><b>50%</b>shorter forecast cycle from my snapshot pipeline</li>
+        <li><b>700+ hrs</b>of AI training delivered across Lattice</li>
+      </ul>
+    </div>
+  </div>
 
-									<section>
-										<h4>Image</h4>
-										<h5>Fit</h5>
-										<span class="image fit"><img src="images/banner.jpg" alt="" /></span>
-										<div class="box alt">
-											<div class="row gtr-50 gtr-uniform">
-												<div class="col-4"><span class="image fit"><img src="images/pic01.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic01.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic01.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-											</div>
-										</div>
-										<h5>Left &amp; Right</h5>
-										<p><span class="image left"><img src="images/avatar.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-										<p><span class="image right"><img src="images/avatar.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-									</section>
+  <section class="block" id="work">
+    <div class="wrap">
+      <div class="block-head">
+        <h2>Experience</h2>
+        <p>Over four years at Lattice Semiconductor, from channel and pricing analytics to owning the company's demand forecast.</p>
+      </div>
+      <ol class="roles" reversed>
+        <li class="role">
+          <div class="when"><b>Apr 2026 to now</b>San Jose, CA</div>
+          <div>
+            <h3>Data Scientist, Demand Planning</h3>
+            <div class="org">Lattice Semiconductor</div>
+            <ul>
+              <li>Built Lattice's first statistical demand-forecasting model, improving accuracy ~10% over the naive model.</li>
+              <li>Own the $1B+ forecast signal that sets the build plan and feeds financial modeling.</li>
+              <li>Engineered a pipeline with historical forecast snapshots for full traceability, cutting cycle time 50%.</li>
+              <li>Traced a systemic unit-demand distortion to price-increase lag, then built validation checks that prevented a 30% overstock.</li>
+              <li>Built a Python Flask app that monitors forecast health for key accounts.</li>
+              <li>Presented humanoid robotics market-penetration analysis to the CEO, Board of Directors, and executive team.</li>
+              <li>Lead the company's AI education effort: 700+ hours of training, workshops, and lectures.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="role">
+          <div class="when"><b>Mar 2024 to Apr 2026</b>San Jose, CA</div>
+          <div>
+            <h3>Senior Business Analyst</h3>
+            <div class="org">Lattice Semiconductor</div>
+            <ul>
+              <li>Connected the company's data sources for the first time, exposing gaps in the business cycle from funnel to point of sale.</li>
+              <li>Built funnel-to-consumption analytics and inventory roadmap analysis to drive inventory normalization.</li>
+              <li>Managed and mentored an intern, raising the analytics and reporting team's productivity 30%.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="role">
+          <div class="when"><b>May 2022 to Mar 2024</b>San Jose, CA</div>
+          <div>
+            <h3>Business Analyst</h3>
+            <div class="org">Lattice Semiconductor</div>
+            <ul>
+              <li>Tracked channel inventory covering 85% of the business and presented it to stakeholders monthly.</li>
+              <li>Built predictive calculators to forecast inventory against executive targets, plus Tableau market-share reporting for top distributors.</li>
+              <li>Built an interactive report to align global pricing and recommend prices for selected products.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="role">
+          <div class="when"><b>Dec 2021 to Mar 2022</b>San Diego, CA</div>
+          <div>
+            <h3>Data Analyst</h3>
+            <div class="org">BlitzStats</div>
+            <ul>
+              <li>Designed a website for NFL analytics on key factors, unusual findings, and league trends.</li>
+              <li>Built Tableau visualizations of playoff likelihood and win percentage.</li>
+            </ul>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
 
-								</div>
-							</section>
-						-->
+  <section class="block" id="projects">
+    <div class="wrap">
+      <div class="block-head">
+        <h2>Projects</h2>
+        <p>Work from Lattice and my master's at UIUC, described by the problem, the method, and what I learned.</p>
+      </div>
 
-					</div>
+      <div class="projects">
+        <article class="project feature">
+          <div>
+            <h3>Demand forecasting at Lattice</h3>
+            <div class="context">Lattice Semiconductor, in production</div>
+            <p>The company's first statistical demand forecast, ~10% more accurate than the naive model it replaced. A snapshot pipeline keeps every forecast version traceable, and a Python Flask app monitors forecast health for key accounts.</p>
+            <ul class="tags"><li>Python</li><li>Flask</li><li>SQL</li><li>Statistical forecasting</li></ul>
+          </div>
+          <div class="finding">
+            <strong>What I found</strong>
+            A lag in price increases was distorting unit demand. The validation checks I built to correct forecasted volumes prevented a 30% overstock.
+          </div>
+        </article>
 
-				<!-- Footer -->
-					<section id="footer">
-						<div class="container">
-							<ul class="copyright">
-								<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-							</ul>
-						</div>
-					</section>
+        <article class="project">
+          <h3>Movie recommender</h3>
+          <div class="context">Practical Statistical Learning, UIUC team project</div>
+          <p>Item-based collaborative filtering on MovieLens, built from scratch: a mean-centered sparse ratings matrix, cosine similarity between movies, the top 30 neighbors per movie, and a popularity fallback for users with too few ratings.</p>
+          <div class="finding"><strong>What I learned</strong>The minimum number of shared raters acts like a hyperparameter. Raising it from 3 to 250 stopped R-rated films from showing up next to <em>Toy Story</em>.</div>
+          <ul class="tags"><li>Collaborative filtering</li><li>Sparse matrices</li><li>Python</li></ul>
+        </article>
 
-			</div>
+        <article class="project">
+          <h3>Historical menu data cleaning</h3>
+          <div class="context">Data Cleaning for Data Science, UIUC final project</div>
+          <p>Cleaned a multi-table historical menu dataset: standardized free-text event names in OpenRefine, validated dates in Python, and compared before-and-after results with SQL in SQLite.</p>
+          <div class="finding"><strong>What I learned</strong>A fix only counts if you can prove it and repeat it, so I mapped the full pipeline as a YesWorkflow provenance graph.</div>
+          <ul class="tags"><li>OpenRefine</li><li>pandas</li><li>SQL</li><li>Data provenance</li></ul>
+        </article>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+        <article class="project">
+          <h3>Predicting daily sunshine</h3>
+          <div class="context">Statistical Modeling in R, UIUC team project</div>
+          <p>Regression on Australian weather data, comparing additive, AIC, BIC, and interaction models with Breusch&ndash;Pagan, Q&ndash;Q, VIF, and Cook's distance diagnostics.</p>
+          <div class="finding"><strong>What I learned</strong>The interaction model fit best on paper but needed nearly 2,000 terms. BIC came close with 71, so we picked the model we could explain.</div>
+          <ul class="tags"><li>Regression</li><li>Model selection</li><li>R</li></ul>
+        </article>
 
-	</body>
+        <article class="project">
+          <h3>Simulation studies</h3>
+          <div class="context">Statistical Modeling in R, UIUC</div>
+          <p>Monte Carlo experiments showing how noise affects significance tests, RMSE-based model selection, and statistical power when the true model is known.</p>
+          <div class="finding"><strong>What I learned</strong>Test RMSE picked the true model only about 45% of the time, and less often as noise grew. Worth remembering in any forecast-model comparison.</div>
+          <ul class="tags"><li>Simulation</li><li>Hypothesis testing</li><li>R</li></ul>
+        </article>
+      </div>
+
+      <p class="also"><b>Earlier work:</b> NFL analytics for BlitzStats and a Carolina Panthers deep dive, both on my <a href="https://public.tableau.com/app/profile/alexanderpoirier">Tableau Public profile</a>.</p>
+    </div>
+  </section>
+
+  <section class="block" id="education">
+    <div class="wrap">
+      <div class="two">
+        <h2 style="font-size:2.25rem">Education</h2>
+        <div>
+          <ul class="schools">
+            <li>
+              <h3>Master of Computer Science, Data Science (MCS-DS)</h3>
+              <p>University of Illinois Urbana-Champaign, 2024 to 2026</p>
+              <p>Applied Machine Learning, Practical Statistical Learning, Statistical Modeling, Data Cleaning, Cloud Computing, Data and Scientific Visualization, Database Systems</p>
+            </li>
+            <li>
+              <h3>BS, Applied Information Management Systems</h3>
+              <p>Loyola Marymount University, 2019 to 2021. Magna cum laude, Tau Sigma National Honor Society, Ignatian Leadership Institute.</p>
+            </li>
+            <li>
+              <h3>Robert H. Smith School of Business</h3>
+              <p>University of Maryland, 2017 to 2019</p>
+            </li>
+          </ul>
+
+          <div class="skills">
+            <div><h3>Languages</h3><p>Python, SQL, R, Java</p></div>
+            <div><h3>Modeling</h3><p>Demand forecasting, regression, PyTorch, scikit-learn</p></div>
+            <div><h3>Data engineering</h3><p>AWS (Athena, RDS, S3), Spark, Hadoop, Flask, OpenRefine</p></div>
+            <div><h3>Analytics</h3><p>Tableau, Power BI, Oracle Fusion Analytics</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div>
+        <h2>Let's talk.</h2>
+        <p>Always happy to talk forecasting, statistical modeling, or bringing AI into a business. Outside of work you'll find me at Shaolin Kung Fu (red belt), at a concert, or watching the Carolina Panthers.</p>
+        <a class="btn solid" href="mailto:amipoi25@gmail.com">Email me</a>
+      </div>
+      <ul>
+        <li><a href="https://www.linkedin.com/in/apoirier2020/">LinkedIn <span>apoirier2020</span></a></li>
+        <li><a href="https://github.com/amipoi">GitHub <span>amipoi</span></a></li>
+        <li><a href="https://public.tableau.com/app/profile/alexanderpoirier">Tableau Public <span>alexanderpoirier</span></a></li>
+        <li><a href="images/Resume_Alexander_Poirier_2026.pdf">Resume <span>PDF</span></a></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">&copy; 2026 Alexander Poirier</div>
+</footer>
+</body>
 </html>
