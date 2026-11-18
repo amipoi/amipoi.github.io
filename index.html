@@ -199,6 +199,33 @@
   .steps em { font-style: normal; color: var(--cobalt); font-weight: 600; }
   .project code { font-size: 0.88em; background: var(--paper); padding: 0.05em 0.35em; border-radius: 4px; }
 
+  /* Diagrams */
+  .figure { margin: 0 0 1.25rem; padding: 1rem; border: 1px solid var(--rule); border-radius: 14px; background: var(--paper); overflow-x: auto; }
+  .figure svg { display: block; width: 100%; min-width: 640px; height: auto; }
+  .figure figcaption { font-size: 0.8rem; color: var(--muted); margin-top: 0.5rem; }
+  .arch .gcp { fill: color-mix(in srgb, var(--cobalt) 6%, transparent); stroke: color-mix(in srgb, var(--cobalt) 45%, transparent); stroke-dasharray: 5 5; }
+  .arch .gcp-label { fill: var(--cobalt); font: 600 13px var(--body); }
+  .arch .node, .arch .src { fill: var(--surface); stroke: var(--rule); }
+  .arch .node.accent { stroke: var(--cobalt); }
+  .arch .t { fill: var(--ink); font: 700 15px var(--display); }
+  .arch .s { fill: var(--muted); font: 12px var(--body); }
+  .arch .l { fill: var(--amber); font: 600 11px var(--body); }
+  .arch .flow { fill: none; stroke: var(--muted); stroke-width: 1.6; }
+  .arch .ahead { fill: var(--muted); }
+  .lat .grid line { stroke: var(--rule); }
+  .lat .ticks text, .lat .legend text { fill: var(--muted); font: 11px var(--body); }
+  .lat .act { fill: none; stroke: var(--ink); stroke-width: 2.4; stroke-linejoin: round; }
+  .lat .snap { fill: none; stroke: var(--cobalt); stroke-width: 2.4; stroke-linejoin: round; }
+  .lat .snapdot { fill: var(--cobalt); }
+  .lat .naive { fill: none; stroke: var(--amber); stroke-width: 2; stroke-dasharray: 6 5; }
+  .lat .panel { fill: var(--surface); stroke: var(--rule); }
+  .lat .pt { fill: var(--ink); font: 700 16px var(--display); }
+  .lat .ps { fill: var(--muted); font: 11.5px var(--body); }
+  .lat .pl { fill: var(--muted); font: 12.5px var(--body); }
+  .lat .pv { fill: var(--ink); font: 700 13px var(--body); }
+  .lat .bar-n { fill: var(--amber); opacity: 0.85; }
+  .lat .bar-m { fill: var(--cobalt); }
+
   /* Education + skills */
   .two { display: grid; grid-template-columns: 15rem 1fr; gap: 2.5rem; }
   .schools { list-style: none; margin: 0; padding: 0; }
@@ -392,7 +419,36 @@
       </div>
 
       <div class="projects">
-        <article class="project feature">
+        <article class="project wide">
+          <figure class="figure">
+            <svg class="lat" viewBox="0 0 960 312" role="img" aria-labelledby="lat-t">
+<title id="lat-t">Illustration with made-up numbers: forecast snapshots saved at months 6, 9 and 12 move closer to actual demand, and the statistical model has about 10 percent less error than a naive forecast.</title>
+<g class="grid"><line x1="44" x2="626" y1="239.6" y2="239.6" /><line x1="44" x2="626" y1="190.8" y2="190.8" /><line x1="44" x2="626" y1="142.0" y2="142.0" /><line x1="44" x2="626" y1="93.2" y2="93.2" /><line x1="44" x2="626" y1="44.4" y2="44.4" /></g>
+<g class="ticks"><text x="44.0" y="276" text-anchor="middle">M1</text><text x="146.7" y="276" text-anchor="middle">M4</text><text x="249.4" y="276" text-anchor="middle">M7</text><text x="352.1" y="276" text-anchor="middle">M10</text><text x="454.8" y="276" text-anchor="middle">M13</text><text x="557.5" y="276" text-anchor="middle">M16</text></g>
+<path class="naive" d="M420.6,133.5 L626.0,133.5" />
+<path class="snap" style="opacity:0.35" d="M215.2,159.9 L249.4,176.5 L283.6,172.7 L317.9,185.2 L352.1,197.8 L386.4,194.0 L420.6,174.0 L454.8,154.0 L489.1,150.2 L523.3,162.8 L557.5,175.3 L591.8,171.5 L626.0,151.5" /><circle class="snapdot" style="opacity:0.35" cx="215.2" cy="159.9" r="4" /><path class="snap" style="opacity:0.6" d="M317.9,147.2 L352.1,148.9 L386.4,145.5 L420.6,119.8 L454.8,94.2 L489.1,90.7 L523.3,109.5 L557.5,128.2 L591.8,124.7 L626.0,99.1" /><circle class="snapdot" style="opacity:0.6" cx="317.9" cy="147.2" r="4" /><path class="snap" style="opacity:1" d="M420.6,133.5 L454.8,106.9 L489.1,101.6 L523.3,123.5 L557.5,145.4 L591.8,140.1 L626.0,107.6" /><circle class="snapdot" style="opacity:1" cx="420.6" cy="133.5" r="4" />
+<path class="act" d="M44.0,160.8 L78.2,151.3 L112.5,184.6 L146.7,200.8 L180.9,189.9 L215.2,159.9 L249.4,113.8 L283.6,132.3 L317.9,147.2 L352.1,179.0 L386.4,174.4 L420.6,133.5 L454.8,94.6 L489.1,87.3 L523.3,110.7 L557.5,118.1 L591.8,126.1 L626.0,115.1" />
+<g class="legend" transform="translate(44,308)">
+  <line x1="0" x2="18" y1="-4" y2="-4" class="act" /><text x="24" y="0">Actual demand</text>
+  <line x1="130" x2="148" y1="-4" y2="-4" class="snap" /><text x="154" y="0">Saved forecast snapshots, older to newer</text>
+  <line x1="420" x2="438" y1="-4" y2="-4" class="naive" /><text x="444" y="0">Naive forecast</text>
+</g>
+<g transform="translate(700,20)">
+  <rect class="panel" x="0" y="0" width="246" height="236" rx="14" />
+  <text class="pt" x="18" y="32">Forecast error</text>
+  <text class="ps" x="18" y="52">lower is better, naive = 100</text>
+  <text class="pl" x="18" y="98">Naive</text>
+  <rect class="bar-n" x="18" y="106" width="200" height="22" rx="6" />
+  <text class="pv" x="210" y="98" text-anchor="end">100</text>
+  <text class="pl" x="18" y="160">Statistical model</text>
+  <rect class="bar-m" x="18" y="168" width="180" height="22" rx="6" />
+  <text class="pv" x="198" y="160" text-anchor="end">~90</text>
+  <text class="ps" x="18" y="218">Every version saved for traceability</text>
+</g>
+</svg>
+            <figcaption>Illustration with made-up numbers. Lattice's real forecast data is confidential.</figcaption>
+          </figure>
+          <div class="wide-text">
           <div>
             <h3>Demand forecasting at Lattice</h3>
             <div class="context">Lattice Semiconductor, in production</div>
@@ -402,6 +458,7 @@
           <div class="finding">
             <strong>What I found</strong>
             A lag in price increases was distorting unit demand. The validation checks I built to correct forecasted volumes prevented a 30% overstock.
+          </div>
           </div>
         </article>
 
@@ -428,15 +485,61 @@
         </article>
 
         <article class="project wide">
-          <button class="shot" type="button" data-full="images/projects/airtrace.webp" aria-label="Enlarge: AirTrace profile page showing a test user’s allergen sensitivities and morning-report setting"><img src="images/projects/airtrace.webp" alt="AirTrace profile page showing a test user’s allergen sensitivities and morning-report setting" loading="lazy" /><span class="zoom">Enlarge</span></button>
+          <figure class="figure">
+            <svg class="arch" viewBox="0 0 960 400" role="img" aria-labelledby="arch-t">
+<title id="arch-t">AirTrace architecture on Google Cloud: Cloud Scheduler triggers a Flask app on Cloud Run each morning, the app reads and writes Cloud SQL for MySQL, and sends Web Push alerts to the browser.</title>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ahead" /></marker></defs>
+<rect class="gcp" x="248" y="14" width="456" height="372" rx="18" />
+<text class="gcp-label" x="268" y="42">Google Cloud, us-central1</text>
+<rect class="src" x="20" y="70" width="190" height="104" rx="12" />
+<text class="t" x="36" y="98">Pollen forecasts</text>
+<text class="s" x="36" y="120">Atmospore API responses,</text>
+<text class="s" x="36" y="139">cached as a snapshot</text>
+<rect class="src" x="20" y="222" width="190" height="104" rx="12" />
+<text class="t" x="36" y="250">Street trees</text>
+<text class="s" x="36" y="272">California tree inventory</text>
+<text class="s" x="36" y="291">with species and location</text>
+<rect class="node" x="268" y="62" width="190" height="104" rx="12" />
+<text class="t" x="284" y="90">Cloud Scheduler</text>
+<text class="s" x="284" y="112">Every day at 7:00 AM</text>
+<text class="s" x="284" y="131">Pacific time</text>
+<rect class="node accent" x="494" y="62" width="190" height="122" rx="12" />
+<text class="t" x="510" y="90">Cloud Run</text>
+<text class="s" x="510" y="112">Flask + Gunicorn</text>
+<text class="s" x="510" y="131">in a Docker container</text>
+<text class="s" x="510" y="150">Raw SQL, no ORM</text>
+<rect class="node accent" x="268" y="232" width="416" height="134" rx="12" />
+<text class="t" x="284" y="260">Cloud SQL for MySQL 8.0</text>
+<text class="s" x="284" y="282">11 tables: users, allergens, forecasts, trees, alerts</text>
+<text class="s" x="284" y="301">Stored procedure: personalized risk per forecast</text>
+<text class="s" x="284" y="320">Transaction: save a location and its assessment</text>
+<text class="s" x="284" y="339">Trigger: a high-risk assessment queues an alert</text>
+<rect class="src" x="748" y="70" width="192" height="122" rx="12" />
+<text class="t" x="764" y="98">Browser</text>
+<text class="s" x="764" y="120">Jinja pages</text>
+<text class="s" x="764" y="139">Leaflet + OpenStreetMap</text>
+<text class="s" x="764" y="158">Service worker for push</text>
+<rect class="src" x="748" y="240" width="192" height="104" rx="12" />
+<text class="t" x="764" y="268">Morning alert</text>
+<text class="s" x="764" y="290">Web Push notification</text>
+<text class="s" x="764" y="309">on high-risk days</text>
+<path class="flow" d="M210,122 C236,122 236,280 262,280" marker-end="url(#ah)" /><text class="l" x="236" y="196" text-anchor="middle">loaded</text>
+<path class="flow" d="M210,274 L262,300" marker-end="url(#ah)" />
+<path class="flow" d="M458,114 L488,114" marker-end="url(#ah)" /><text class="l" x="473" y="104" text-anchor="middle">POST</text>
+<path class="flow" d="M560,184 L560,226" marker-end="url(#ah)" /><text class="l" x="568" y="210" text-anchor="start">PyMySQL</text>
+<path class="flow" d="M626,226 L626,190" marker-end="url(#ah)" />
+<path class="flow" d="M742,112 L690,112" marker-end="url(#ah)" /><text class="l" x="716" y="102" text-anchor="middle">HTTPS</text>
+<path class="flow" d="M684,150 C716,150 716,292 742,292" marker-end="url(#ah)" /><text class="l" x="722" y="224" text-anchor="start">VAPID push</text>
+</svg>
+          </figure>
           <div class="wide-text">
             <div>
-              <h3>AirTrace: personal allergy risk app</h3>
+              <h3>AirTrace: allergy risk app on Google Cloud</h3>
               <div class="context">Database Systems, UIUC team project</div>
-              <p>A Flask and MySQL web app on Google Cloud. It combines cached pollen forecasts, each user's allergen sensitivities, and nearby California street-tree data into a personal seven-day risk forecast. Built with raw SQL and no ORM, it adjusts risk using tree density within one mile (<code>ST_Distance_Sphere</code>) and uses a stored procedure, a trigger, and a transaction to queue morning allergy alerts.</p>
-              <ul class="tags"><li>MySQL</li><li>Flask</li><li>Cloud SQL</li><li>Cloud Run</li><li>Leaflet</li></ul>
+              <p>A cloud-hosted web app that turns cached pollen forecasts, each user's allergen sensitivities, and nearby California street-tree data into a personal seven-day allergy risk forecast. The Flask app runs in a Docker container on Cloud Run against Cloud SQL for MySQL. Cloud Scheduler wakes it at 7 AM every day to send Web Push alerts on high-risk days.</p>
+              <ul class="tags"><li>Google Cloud Run</li><li>Cloud SQL (MySQL)</li><li>Cloud Scheduler</li><li>Docker</li><li>Flask</li><li>Web Push</li></ul>
             </div>
-            <div class="finding"><strong>What I learned</strong>Putting the rules in the database (constraints, a trigger, a stored procedure) guaranteed each alert was created exactly once, no matter how the app called it.</div>
+            <div class="finding"><strong>What I learned</strong>Splitting the work made the cloud piece simple. The database decides when an alert is due (a trigger fills a queue), and the scheduled Cloud Run job only sends what is queued, so every alert is queued once and marked sent after delivery.</div>
           </div>
         </article>
 
