@@ -8,6 +8,14 @@
 <meta name="description" content="Alexander Poirier is a data scientist at Lattice Semiconductor who builds demand forecasting models, data pipelines, and AI training. MCS-DS, University of Illinois Urbana-Champaign." />
 <meta property="og:title" content="Alexander Poirier | Data Scientist" />
 <meta property="og:description" content="Demand forecasting, statistical modeling, and AI enablement at Lattice Semiconductor." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://amipoi.github.io/" />
+<meta property="og:image" content="https://amipoi.github.io/images/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Alexander Poirier, Data Scientist: demand forecasting and machine learning" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://amipoi.github.io/images/og-image.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
@@ -226,6 +234,29 @@
   .lat .bar-n { fill: var(--amber); opacity: 0.85; }
   .lat .bar-m { fill: var(--cobalt); }
 
+  /* AI initiative, recommender, Spark panels */
+  .flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin: 0 0 1.25rem; padding: 1rem; list-style: none; border: 1px solid var(--rule); border-radius: 14px; background: var(--paper); counter-reset: step; }
+  .flow li { position: relative; padding: 1rem 1.1rem 1.1rem; border-radius: 10px; background: var(--surface); color: var(--muted); font-size: 0.9rem; line-height: 1.45; }
+  .flow li + li::before { content: ""; position: absolute; left: -0.62rem; top: 50%; width: 0.5rem; height: 0.5rem; border-top: 2px solid var(--cobalt); border-right: 2px solid var(--cobalt); transform: translateY(-50%) rotate(45deg); }
+  .flow b { display: block; font: 800 2.1rem/1.1 var(--display); color: var(--ink); letter-spacing: -0.02em; }
+  .flow strong { display: block; color: var(--cobalt); font-size: 0.85rem; margin: 0.15rem 0 0.4rem; }
+  .recs { margin: 0 0 1.25rem; padding: 1rem 1.1rem; border: 1px solid var(--rule); border-radius: 14px; background: var(--paper); font-size: 0.85rem; }
+  .recs .rated { display: flex; flex-wrap: wrap; gap: 0.4rem 0.75rem; color: var(--muted); margin-bottom: 0.75rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--rule); }
+  .recs .rated span { color: var(--ink); }
+  .recs .rated em { font-style: normal; color: var(--amber); }
+  .recs ol { margin: 0; padding: 0; list-style: none; }
+  .recs li { display: grid; grid-template-columns: 1fr 5.5rem 2.4rem; gap: 0.6rem; align-items: center; margin: 0.3rem 0; }
+  .recs li .g { display: block; color: var(--muted); font-size: 0.78rem; }
+  .recs .track { height: 8px; border-radius: 4px; background: color-mix(in srgb, var(--cobalt) 10%, transparent); overflow: hidden; }
+  .recs .fill { display: block; height: 100%; background: var(--cobalt); }
+  .recs li > span:last-child { text-align: right; font-variant-numeric: tabular-nums; color: var(--ink); }
+  .recs .cap { color: var(--muted); margin-bottom: 0.4rem; }
+  .jobs { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; margin: 0 0 1.25rem; padding: 1rem; list-style: none; border: 1px solid var(--rule); border-radius: 14px; background: var(--paper); }
+  .jobs li { padding: 0.7rem 0.85rem; border-radius: 10px; background: var(--surface); font-size: 0.82rem; color: var(--muted); line-height: 1.4; }
+  .jobs li.big { grid-column: 1 / -1; }
+  .jobs b { display: block; font: 700 1.45rem/1.15 var(--display); color: var(--ink); }
+  .jobs li.big b { color: var(--cobalt); font-size: 1.9rem; }
+
   /* Education + skills */
   .two { display: grid; grid-template-columns: 15rem 1fr; gap: 2.5rem; }
   .schools { list-style: none; margin: 0; padding: 0; }
@@ -260,7 +291,8 @@
     .facts li:nth-child(n+3) { border-top: 1px solid var(--rule); }
     .projects, .skills { grid-template-columns: 1fr; }
     .cars-avg { margin-left: 0; width: 100%; }
-    .steps { grid-template-columns: 1fr; }
+    .steps, .flow { grid-template-columns: 1fr; }
+    .flow li + li::before { display: none; }
     .top nav { display: none; }
     section.block { padding-top: 3.5rem; }
   }
@@ -342,7 +374,7 @@
     <div class="wrap">
       <ul>
         <li><b>$1B+</b>forecast signal I own, driving the company build plan</li>
-        <li><b>~10%</b>more accurate than the naive model it replaced</li>
+        <li><b>~10%</b>lower WAPE than the naive model it replaced</li>
         <li><b>50%</b>shorter forecast cycle from my snapshot pipeline</li>
         <li><b>700+ hrs</b>of AI training delivered across Lattice</li>
       </ul>
@@ -362,13 +394,13 @@
             <h3>Data Scientist, Demand Planning</h3>
             <div class="org">Lattice Semiconductor</div>
             <ul>
-              <li>Built Lattice's first statistical demand-forecasting model, improving accuracy ~10% over the naive model.</li>
-              <li>Own the $1B+ forecast signal that sets the build plan and feeds financial modeling.</li>
+              <li>Built Lattice's first statistical demand-forecasting model, cutting forecast error (WAPE) ~10% versus the naive model.</li>
+              <li>Own the forecast signal that sets the build plan and feeds financial modeling.</li>
               <li>Engineered a pipeline with historical forecast snapshots for full traceability, cutting cycle time 50%.</li>
               <li>Traced a systemic unit-demand distortion to price-increase lag, then built validation checks that prevented a 30% overstock.</li>
               <li>Built a Python Flask app that monitors forecast health for key accounts.</li>
               <li>Presented humanoid robotics market-penetration analysis to the CEO, Board of Directors, and executive team.</li>
-              <li>Lead the company's AI education effort: 700+ hours of training, workshops, and lectures.</li>
+              <li>Lead the company's GenAI task force: 700+ hours of training, workshops, and lectures, sparking 30+ GenAI projects across sales functions.</li>
             </ul>
           </div>
         </li>
@@ -415,7 +447,7 @@
     <div class="wrap">
       <div class="block-head">
         <h2>Projects</h2>
-        <p>My forecasting work at Lattice, plus one project from each graduate course at UIUC: the problem, the method, and what I took away.</p>
+        <p>My forecasting and GenAI work at Lattice, plus one project from each graduate course at UIUC: the problem, the method, and what I took away.</p>
       </div>
 
       <div class="projects">
@@ -435,7 +467,7 @@
 </g>
 <g transform="translate(700,20)">
   <rect class="panel" x="0" y="0" width="246" height="236" rx="14" />
-  <text class="pt" x="18" y="32">Forecast error</text>
+  <text class="pt" x="18" y="32">Forecast error (WAPE)</text>
   <text class="ps" x="18" y="52">lower is better, naive = 100</text>
   <text class="pl" x="18" y="98">Naive</text>
   <rect class="bar-n" x="18" y="106" width="200" height="22" rx="6" />
@@ -452,7 +484,7 @@
           <div>
             <h3>Demand forecasting at Lattice</h3>
             <div class="context">Lattice Semiconductor, in production</div>
-            <p>The company's first statistical demand forecast, ~10% more accurate than the naive model it replaced. A snapshot pipeline keeps every forecast version traceable, and a Python Flask app monitors forecast health for key accounts.</p>
+            <p>The company's first statistical demand forecast, with ~10% lower WAPE than the naive model it replaced. A snapshot pipeline keeps every forecast version traceable, and a Python Flask app monitors forecast health for key accounts.</p>
             <ul class="tags"><li>Python</li><li>Flask</li><li>SQL</li><li>Statistical forecasting</li></ul>
           </div>
           <div class="finding">
@@ -460,6 +492,52 @@
             A lag in price increases was distorting unit demand. The validation checks I built to correct forecasted volumes prevented a 30% overstock.
           </div>
           </div>
+        </article>
+
+        <article class="project wide">
+          <ol class="flow" aria-label="How the GenAI program rolled out">
+            <li><b>250</b><strong>Learn</strong>Sales reps on a LinkedIn Learning playlist I built, with required reading</li>
+            <li><b>80+</b><strong>Practice</strong>People at an in-person GenAI workshop I taught in Manila on prompting and data governance</li>
+            <li><b>30+</b><strong>Build</strong>GenAI projects now running across multiple sales functions</li>
+          </ol>
+          <div class="wide-text">
+            <div>
+              <h3>Leading Lattice's GenAI task force</h3>
+              <div class="context">Lattice Semiconductor, company-wide initiative</div>
+              <p>I lead the task force that brings generative AI into Lattice's sales organization. I built a LinkedIn Learning playlist with required reading for the 250-person sales team, then traveled to Manila to teach a hands-on workshop on prompting and data governance. Across the program, that adds up to 700+ hours of training, workshops, and lectures.</p>
+              <ul class="tags"><li>GenAI enablement</li><li>Prompt engineering</li><li>Data governance</li><li>Training design</li></ul>
+            </div>
+            <div class="finding"><strong>What changed</strong>GenAI went from scattered experiments to 30+ distinct projects across multiple sales functions, and teaching data governance alongside prompting gave every team guardrails from the start.</div>
+          </div>
+        </article>
+
+        <article class="project">
+          <button class="shot" type="button" data-full="images/projects/cnn.webp" aria-label="Enlarge: Sample CIFAR-10 and MNIST test images with per-class accuracy charts for both models"><img src="images/projects/cnn.webp" alt="Sample CIFAR-10 and MNIST test images with per-class accuracy charts for both models" loading="lazy" /><span class="zoom">Enlarge</span></button>
+          <h3>Image classification in PyTorch</h3>
+          <div class="context">Applied Machine Learning, UIUC</div>
+          <p>Trained convolutional networks in PyTorch on two image tasks, CIFAR-10 objects (64% test accuracy) and MNIST handwritten digits (94.5%), with custom architectures, weight initialization, and per-class evaluation.</p>
+          <div class="finding"><strong>What I learned</strong>Overall accuracy hides where a model struggles. On CIFAR-10, birds, cats, and dogs lagged well behind trucks and frogs.</div>
+          <ul class="tags"><li>PyTorch</li><li>CNNs</li><li>Computer vision</li></ul>
+        </article>
+
+        <article class="project">
+          <div class="recs" role="group" aria-label="Example recommendations from my recommender">
+            <div class="rated">A new user rates: <span>Star Wars: A New Hope <em>5 stars</em></span><span>Independence Day <em>4 stars</em></span></div>
+            <div class="cap">Top recommendations, by predicted rating</div>
+            <ol>
+              <li><span>Rear Window (1954)<span class="g">Mystery, Thriller</span></span><span class="track"><span class="fill" style="width:88%"></span></span><span>4.70</span></li>
+              <li><span>Seven Samurai (1954)<span class="g">Action, Drama</span></span><span class="track"><span class="fill" style="width:88%"></span></span><span>4.70</span></li>
+              <li><span>A Close Shave (1995)<span class="g">Animation, Comedy</span></span><span class="track"><span class="fill" style="width:86%"></span></span><span>4.69</span></li>
+              <li><span>Dr. Strangelove (1963)<span class="g">Sci-Fi, War</span></span><span class="track"><span class="fill" style="width:86%"></span></span><span>4.69</span></li>
+              <li><span>North by Northwest (1959)<span class="g">Drama, Thriller</span></span><span class="track"><span class="fill" style="width:85%"></span></span><span>4.68</span></li>
+              <li><span>Chinatown (1974)<span class="g">Film-Noir, Mystery</span></span><span class="track"><span class="fill" style="width:85%"></span></span><span>4.68</span></li>
+            </ol>
+          </div>
+          <h3>Movie recommender</h3>
+          <div class="context">Practical Statistical Learning, UIUC team project</div>
+          <p>Item-based collaborative filtering on MovieLens, built from scratch: a mean-centered sparse ratings matrix, cosine similarity between movies, the top 30 neighbors per movie, and a popularity fallback for users with too few ratings.</p>
+          <div class="finding"><strong>What I learned</strong>The minimum number of shared raters acts like a hyperparameter. Raising it from 3 to 250 stopped R-rated films from showing up next to <em>Toy Story</em>, and it produced lists like this one: suspense and adventure classics for a sci-fi action fan.</div>
+          <ul class="tags"><li>Collaborative filtering</li><li>Sparse matrices</li><li>Python</li></ul>
         </article>
 
         <article class="project wide">
@@ -543,54 +621,6 @@
           </div>
         </article>
 
-        <article class="project">
-          <button class="shot" type="button" data-full="images/projects/movie-recommender.webp" aria-label="Enlarge: Bar charts comparing a user's most-rated genres with the genres of their recommended movies"><img src="images/projects/movie-recommender.webp" alt="Bar charts comparing a user's most-rated genres with the genres of their recommended movies" loading="lazy" /><span class="zoom">Enlarge</span></button>
-          <h3>Movie recommender</h3>
-          <div class="context">Practical Statistical Learning, UIUC team project</div>
-          <p>Item-based collaborative filtering on MovieLens, built from scratch: a mean-centered sparse ratings matrix, cosine similarity between movies, the top 30 neighbors per movie, and a popularity fallback for users with too few ratings.</p>
-          <div class="finding"><strong>What I learned</strong>The minimum number of shared raters acts like a hyperparameter. Raising it from 3 to 250 stopped R-rated films from showing up next to <em>Toy Story</em>.</div>
-          <ul class="tags"><li>Collaborative filtering</li><li>Sparse matrices</li><li>Python</li></ul>
-        </article>
-
-        <article class="project">
-          <button class="shot" type="button" data-full="images/projects/cnn.webp" aria-label="Enlarge: Sample CIFAR-10 and MNIST test images with per-class accuracy charts for both models"><img src="images/projects/cnn.webp" alt="Sample CIFAR-10 and MNIST test images with per-class accuracy charts for both models" loading="lazy" /><span class="zoom">Enlarge</span></button>
-          <h3>Image classification in PyTorch</h3>
-          <div class="context">Applied Machine Learning, UIUC</div>
-          <p>Trained convolutional networks in PyTorch on two image tasks, CIFAR-10 objects (64% test accuracy) and MNIST handwritten digits (94.5%), with custom architectures, weight initialization, and per-class evaluation.</p>
-          <div class="finding"><strong>What I learned</strong>Overall accuracy hides where a model struggles. On CIFAR-10, birds, cats, and dogs lagged well behind trucks and frogs.</div>
-          <ul class="tags"><li>PyTorch</li><li>CNNs</li><li>Computer vision</li></ul>
-        </article>
-
-        <article class="project">
-          <ul class="bars" aria-label="Most common words in Wikipedia page titles, from my Spark job output">
-            <li class="cap">Most common words in Wikipedia titles, from my Spark job</li>
-            <li><span>list</span><span class="track"><span class="fill" style="width:100.0%"></span></span><span>1,948</span></li>
-            <li><span>de</span><span class="track"><span class="fill" style="width:86.4%"></span></span><span>1,684</span></li>
-            <li><span>new</span><span class="track"><span class="fill" style="width:55.3%"></span></span><span>1,077</span></li>
-            <li><span>school</span><span class="track"><span class="fill" style="width:54.7%"></span></span><span>1,065</span></li>
-            <li><span>county</span><span class="track"><span class="fill" style="width:52.4%"></span></span><span>1,020</span></li>
-            <li><span>state</span><span class="track"><span class="fill" style="width:48.3%"></span></span><span>940</span></li>
-            <li><span>john</span><span class="track"><span class="fill" style="width:48.0%"></span></span><span>936</span></li>
-            <li><span>disambiguation</span><span class="track"><span class="fill" style="width:45.8%"></span></span><span>893</span></li>
-            <li><span>station</span><span class="track"><span class="fill" style="width:41.1%"></span></span><span>800</span></li>
-            <li><span>route</span><span class="track"><span class="fill" style="width:39.6%"></span></span><span>771</span></li>
-          </ul>
-          <h3>Wikipedia analytics with Apache Spark</h3>
-          <div class="context">Cloud Computing Applications, UIUC</div>
-          <p>A set of Spark MapReduce jobs over Wikipedia page titles and the link graph. They count title words (minus stopwords), compute summary statistics, find orphan pages that nothing links to, rank the most-linked pages, and score popularity for a league of pages.</p>
-          <div class="finding"><strong>What it found</strong>21,851 orphan pages with no incoming links. The most-linked page drew 1,676 links.</div>
-          <ul class="tags"><li>Apache Spark</li><li>MapReduce</li><li>Python</li><li>Docker</li></ul>
-        </article>
-
-        <article class="project">
-          <button class="shot" type="button" data-full="images/projects/menu-workflow.webp" aria-label="Enlarge: YesWorkflow provenance graph of the OpenRefine cleaning steps"><img src="images/projects/menu-workflow.webp" alt="YesWorkflow provenance graph of the OpenRefine cleaning steps" loading="lazy" /><span class="zoom">Enlarge</span></button>
-          <h3>Historical menu data cleaning</h3>
-          <div class="context">Data Cleaning for Data Science, UIUC final project</div>
-          <p>Cleaned a multi-table historical menu dataset: standardized free-text event names in OpenRefine, validated dates in Python, and compared before-and-after results with SQL in SQLite.</p>
-          <div class="finding"><strong>What I learned</strong>A fix only counts if you can prove it and repeat it, so I mapped the full pipeline as a YesWorkflow provenance graph.</div>
-          <ul class="tags"><li>OpenRefine</li><li>pandas</li><li>SQL</li><li>Data provenance</li></ul>
-        </article>
-
         <article class="project wide">
           <ol class="steps" aria-label="How the sunshine model was simplified">
             <li><b>71</b>predictors, R&sup2; 0.72. BIC on everything.</li>
@@ -607,6 +637,30 @@
             <div class="finding"><strong>What I learned</strong>Cutting from 71 predictors to 12 cost almost no accuracy, and train and test RMSE stayed close, so the simpler model held up on unseen data.</div>
           </div>
         </article>
+
+        <article class="project">
+          <ul class="jobs" aria-label="Results from my Spark jobs">
+            <li class="big"><b>21,851</b>orphan pages that no other page links to</li>
+            <li><b>1,676</b>links to the most-linked page</li>
+            <li><b>1,948</b>appearances of the top title word, "list"</li>
+            <li><b>5</b>Spark jobs: word counts, statistics, orphans, top links, rankings</li>
+            <li><b>Docker</b>containerized Spark environment for development</li>
+          </ul>
+          <h3>Wikipedia analytics with Apache Spark</h3>
+          <div class="context">Cloud Computing Applications, UIUC</div>
+          <p>A set of Spark MapReduce jobs over Wikipedia page titles and the link graph. They count title words (minus stopwords), compute summary statistics, find orphan pages that nothing links to, rank the most-linked pages, and score popularity for a league of pages.</p>
+          <div class="finding"><strong>What I learned</strong>MapReduce thinking means shaping every question as keys and counts, so the same handful of transformations can answer very different questions about a link graph.</div>
+          <ul class="tags"><li>Apache Spark</li><li>MapReduce</li><li>Python</li><li>Docker</li></ul>
+        </article>
+
+        <article class="project">
+          <button class="shot" type="button" data-full="images/projects/menu-workflow.webp" aria-label="Enlarge: YesWorkflow provenance graph of the OpenRefine cleaning steps"><img src="images/projects/menu-workflow.webp" alt="YesWorkflow provenance graph of the OpenRefine cleaning steps" loading="lazy" /><span class="zoom">Enlarge</span></button>
+          <h3>Historical menu data cleaning</h3>
+          <div class="context">Data Cleaning for Data Science, UIUC final project</div>
+          <p>Cleaned a multi-table historical menu dataset: standardized free-text event names in OpenRefine, validated dates in Python, and compared before-and-after results with SQL in SQLite.</p>
+          <div class="finding"><strong>What I learned</strong>A fix only counts if you can prove it and repeat it, so I mapped the full pipeline as a YesWorkflow provenance graph.</div>
+          <ul class="tags"><li>OpenRefine</li><li>pandas</li><li>SQL</li><li>Data provenance</li></ul>
+        </article>
       </div>
 
       <p class="also"><b>More on Tableau Public:</b> a European hotel reviews dashboard, NFL analytics from BlitzStats, and a Carolina Panthers deep dive, on my <a href="https://public.tableau.com/app/profile/alexanderpoirier">Tableau Public profile</a>.</p>
@@ -621,7 +675,7 @@
           <ul class="schools">
             <li>
               <h3>Master of Computer Science, Data Science (MCS-DS)</h3>
-              <p>University of Illinois Urbana-Champaign, 2024 to 2026</p>
+              <p>University of Illinois Urbana-Champaign, graduated August 2026</p>
               <p>Applied Machine Learning, Practical Statistical Learning, Statistical Modeling, Data Cleaning, Cloud Computing, Data and Scientific Visualization, Database Systems</p>
             </li>
             <li>
